@@ -69,7 +69,7 @@ Sxiv.font: RobotoMono Nerd Font:style=bold:size=11
 
 ! black
 *.color0:       #181a1f
-*.color8:       #848b98
+*.color8:       #5c6370
 
 ! red
 *.color1:       #e06c75
