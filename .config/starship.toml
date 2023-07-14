@@ -28,7 +28,7 @@ format = 'at [$path](bold yellow) '
 read_only = "󰌾"
 
 [docker_context]
-symbol = " "
+symbol = " "
 
 [elixir]
 symbol = " "
@@ -49,7 +49,7 @@ symbol = " "
 symbol = " "
 
 [haskell]
-symbol = " "
+symbol = " "
 
 [haxe]
 symbol = "⌘ "
@@ -65,7 +65,7 @@ disabled = false
 ssh_symbol = " "
 
 [java]
-symbol = " "
+symbol = " "
 
 [julia]
 symbol = " "
@@ -96,7 +96,7 @@ disabled = false
 symbol = "🪺 "
 
 [python]
-symbol = " "
+symbol = " "
 
 [rlang]
 symbol = "󰟔 "
