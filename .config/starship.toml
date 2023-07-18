@@ -28,10 +28,10 @@ format = 'at [$path](bold yellow) '
 read_only = "󰌾"
 
 [docker_context]
-symbol = " "
+symbol = "󰡨 "
 
 [elixir]
-symbol = " "
+symbol = " "
 
 [elm]
 symbol = " "
@@ -80,7 +80,7 @@ symbol = "󰍛 "
 symbol = "󰔷 "
 
 [nim]
-symbol = "󰆥 "
+symbol = " "
 
 [nix_shell]
 symbol = " "
