@@ -9,7 +9,6 @@ Xft.lcdfilter: lcdfilter
 XTerm*renderFont: true
 XTerm*faceName: xft:Mononoki Nerd Font:size=11, \
                 xft:JoyPixels:size=11, \
-                xft:RobotoMono Nerd Font:size=11, \
 XTerm*faceSize: 11
 XTerm*utf8: 11
 XTerm*locale: true
@@ -30,14 +29,13 @@ URxvt*buffered: false
 URxvt.intensityStyles: false
 URxvt.font: xft:Mononoki Nerd Font:size=11, \
             xft:JoyPixels:size=11, \
-            xft:Monospace:style=Medium:size=11,    
 URxvt.saveLines: 2000
 URxvt.scrollBar: false
 URxvt.cursorColor: white
 
 !! Extensions
 URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select,clipboard
-URxvt.colorUL: #61afef
+URxvt.colorUL: #458588
 !! url-select
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: urxvt -e lynx -cfg=~/.lynx.cfg -lss=~/.lynx.lss
@@ -47,55 +45,51 @@ URxvt.keysym.M-Escape: perl:keyboard-select:activate
 !! resize-font
 URxvt.keysym.C-k:   font-size:increase
 URxvt.keysym.C-j:   font-size:decrease
-!! Matcher
-URxvt.url-launcher:	urxvt -e lynx -cfg=~/.lynx.cfg -lss=~/.lynx.lss
-URxvt.matcher.button: 1
 !!clipboard
 URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
 URxvt*depth: 32
 
 ! COLORS FOR SXIV
-Sxiv.foreground:   #abb2bf
-Sxiv.background:   #282c34
-Sxiv.font: RobotoMono Nerd Font:style=bold:size=11
+Sxiv.foreground:   #ebdbb2
+Sxiv.background:   #282828
+Sxiv.font: UbuntuMono Nerd Font:style=bold:size=11
 
 
 ! FOR ALL OTHER PROGRAMS USE XRESOURCES
 ! This includes xterm and urxvt
-*.foreground:   #abb2bf
-*.background:   #282c34
-*.cursorColor:  #abb2bf
+*.foreground:   #ebdbb2
+*.background:   #282828
+*.cursorColor:  #ebdbb2
 
 ! black
-*.color0:       #181a1f
-*.color8:       #5c6370
+*.color0:       #282828
+*.color8:       #928374
 
 ! red
-*.color1:       #e06c75
-*.color9:       #e06c75
+*.color1:       #cc241d
+*.color9:       #fb4934
 
 ! green
-*.color2:       #98c379
-*.color10:      #98c379
+*.color2:       #98971a
+*.color10:      #b8bb26
 
 ! yellow
-*.color3:       #e5c07b
-*.color11:      #e5c07b
+*.color3:       #d79921
+*.color11:      #fabd2f
 
 ! blue
-*.color4:       #61afef
-*.color12:      #61afef
+*.color4:       #458598
+*.color12:      #83a598
 
 ! magenta
-*.color5:       #c678dd
-*.color13:      #c678dd
+*.color5:       #b16286
+*.color13:      #d3869b
 
 ! cyan
-*.color6:       #56b6c2
-*.color14:      #56b6c2
+*.color6:       #689d6a
+*.color14:      #8ec07c
 
 ! white
-*.color7:       #abb2bf
-*.color15:      #abb2bf
-
+*.color7:       #a89984
+*.color15:      #ebdbb2
