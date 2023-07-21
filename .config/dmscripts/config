@@ -211,15 +211,15 @@ radio_stations[RocknRoll Radio]="https://zeno.fm/radio/rocknroll-radio994c7517qs
 
 # dm-colpick config
 declare -A colpick_list
-colpick_list[black]="#181a1f"
-colpick_list[red]="#e06c75"
-colpick_list[green]="#98c379"
-colpick_list[yellow]="#e5c07b"
-colpick_list[blue]="#61afef"
-colpick_list[purple]="#c678dd"
-colpick_list[cyan]="#56b6c2"
-colpick_list[white]="#abb2bf"
-colpick_list[orange]="#d19a66"
+colpick_list[black]="#282828"
+colpick_list[red]="#cc241d"
+colpick_list[green]="#98971a"
+colpick_list[yellow]="#d79921"
+colpick_list[blue]="#458588"
+colpick_list[purple]="#b16286"
+colpick_list[cyan]="#689d6a"
+colpick_list[white]="#ebdbb2"
+colpick_list[orange]="#d65d0e"
 
 # dm-weather config
 
