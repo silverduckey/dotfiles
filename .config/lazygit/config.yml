@@ -1,0 +1,6 @@
+gui:
+  showBranchCommitHash: true # show commit hashes alongside branch names
+  experimentalShowBranchHeads: true # visualize branch heads with (*) in commits list
+  nerdFontsVersion: "3" # nerd fonts version to use ("2" or "3"); empty means don"t show nerd font icons
+os:
+  editPreset: "nvim"
