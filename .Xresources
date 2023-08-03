@@ -8,7 +8,7 @@ Xft.lcdfilter: lcdfilter
 
 XTerm*renderFont: true
 XTerm*faceName: xft:Mononoki Nerd Font:pixelsize=14, \
-                xft:JoyPixels:pixelsize=14, \
+                xft:Noto Color Emoji:pixelsize=14, \
 XTerm*faceSize: 11
 XTerm*utf8: 11
 XTerm*locale: true
