@@ -43,8 +43,7 @@ eval "$(starship init zsh)"
   git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-
-antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
-source ~/.zsh_plugins.zsh
-
 antidote load
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
