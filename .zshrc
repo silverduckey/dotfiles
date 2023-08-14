@@ -35,6 +35,10 @@ if [ -d "$HOME/.bin" ] ;
 then PATH="$HOME/.bin:$PATH"
 fi
 
+colorscript -r
+
+eval "$(starship init zsh)"
+
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
@@ -44,7 +48,3 @@ antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
 source ~/.zsh_plugins.zsh
 
 antidote load
-
-colorscript -r
-
-eval "$(starship init zsh)"
