@@ -40,12 +40,10 @@ fi
 
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 
-source <(antidote init)
+antidote bundle <~/.zsh_plugins.txt >~/.zsh_plugins.zsh
+source ~/.zsh_plugins.zsh
 
-antidote bundle zsh-users/zsh-completions
-antidote bundle zsh-users/zsh-autosuggestions
-antidote bundle zsh-users/zsh-history-substring-search
-antidote bundle zsh-users/zsh-syntax-highlighting
+antidote load
 
 colorscript -r
 
