@@ -25,8 +25,6 @@ zstyle :compinstall filename "/home/vu/.zshrc"
 autoload -Uz compinit
 compinit
 
-bindkey -v
-
 if [ -d "$HOME/.local/bin" ] ;
 then PATH="$HOME/.local/bin:$PATH"
 fi
@@ -45,5 +43,8 @@ eval "$(starship init zsh)"
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
+bindkey -v
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
