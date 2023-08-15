@@ -15,10 +15,6 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-
 setopt autocd beep extendedglob nomatch notify
 
 zstyle :compinstall filename "$HOME/.zshrc"
@@ -33,10 +29,6 @@ if [ -d "$HOME/.bin" ] ;
 then PATH="$HOME/.bin:$PATH"
 fi
 
-colorscript -r
-
-eval "$(starship init zsh)"
-
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
     git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
@@ -48,3 +40,29 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+function zle-keymap-select {
+if [[ ${KEYMAP} == vicmd ]] ||
+    [[ $1 = 'block' ]]; then
+    echo -ne '\e[2 q'
+elif [[ ${KEYMAP} == main ]] ||
+    [[ ${KEYMAP} == viins ]] ||
+    [[ ${KEYMAP} = '' ]] ||
+    [[ $1 = 'beam' ]]; then
+    echo -ne '\e[6 q'
+fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+zle -K viins
+echo -ne "\e[6 q"
+}
+zle -N zle-line-init
+echo -ne '\e[6 q'
+preexec() { echo -ne '\e[6 q' ;}
+
+KEYTIMEOUT=1
+
+colorscript -r
+
+eval "$(starship init zsh)"
