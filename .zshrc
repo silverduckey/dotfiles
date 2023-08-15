@@ -21,7 +21,7 @@ SAVEHIST=1000
 
 setopt autocd beep extendedglob nomatch notify
 
-zstyle :compinstall filename "/home/vu/.zshrc"
+zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 
@@ -38,7 +38,7 @@ colorscript -r
 eval "$(starship init zsh)"
 
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
-  git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+    git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
