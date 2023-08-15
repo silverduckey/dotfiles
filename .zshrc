@@ -36,6 +36,7 @@ source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
 bindkey -v
+export KEYTIMEOUT=1
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey '^[[A' history-substring-search-up
@@ -60,8 +61,6 @@ echo -ne "\e[6 q"
 zle -N zle-line-init
 echo -ne '\e[6 q'
 preexec() { echo -ne '\e[6 q' ;}
-
-KEYTIMEOUT=1
 
 colorscript -r
 
