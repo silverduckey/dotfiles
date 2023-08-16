@@ -49,21 +49,16 @@ antidote load
 
 bindkey -v
 export KEYTIMEOUT=1
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd "k" history-substring-search-up
+bindkey -M vicmd "j" history-substring-search-down
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
 
-function zle-keymap-select {
-if [[ ${KEYMAP} == vicmd ]] ||
-    [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-elif [[ ${KEYMAP} == main ]] ||
-    [[ ${KEYMAP} == viins ]] ||
-    [[ ${KEYMAP} = '' ]] ||
-    [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-fi
+function zle-keymap-select () {
+case $KEYMAP in
+    vicmd) echo -ne "\e[1 q";;
+    viins|main) echo -ne "\e[5 q";;
+esac
 }
 zle -N zle-keymap-select
 zle-line-init() {
@@ -71,8 +66,8 @@ zle -K viins
 echo -ne "\e[5 q"
 }
 zle -N zle-line-init
-echo -ne '\e[5 q'
-preexec() { echo -ne '\e[5 q' ;}
+echo -ne "\e[5 q"
+preexec() { echo -ne "\e[5 q" ;}
 
 colorscript -r
 
