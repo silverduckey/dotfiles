@@ -29,6 +29,18 @@ if [ -d "$HOME/.bin" ] ;
 then PATH="$HOME/.bin:$PATH"
 fi
 
+if [ -z "$XDG_CONFIG_HOME" ]; then
+    export XDG_CONFIG_HOME="$HOME/.config"
+fi
+
+if [ -z "$XDG_DATA_HOME" ]; then
+    export XDG_DATA_HOME="$HOME/.local/share"
+fi
+
+if [ -z "$XDG_CACHE_HOME" ]; then
+    export XDG_CACHE_HOME="$HOME/.cache"
+fi
+
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
     git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
