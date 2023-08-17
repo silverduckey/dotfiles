@@ -1,17 +1,17 @@
-ln             # LINK
-or      o       # ORPHAN
-tw      t       # STICKY_OTHER_WRITABLE
-ow             # OTHER_WRITABLE
-st      t       # STICKY
-di             # DIR
-pi      p       # FIFO
-so      s       # SOCK
-bd      b       # BLK
-cd      c       # CHR
-su      u       # SETUID
-sg      g       # SETGID
-ex             # EXEC
-fi             # FILE
+ln      
+or      o
+tw      t
+ow      
+st      t
+di      
+pi      p
+so      s
+bd      b
+cd      c
+su      u
+sg      g
+ex      
+fi      
 
 *.styl          
 *.sass          
