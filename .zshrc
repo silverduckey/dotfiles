@@ -1,7 +1,15 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 export TERM="xterm-256color"
-export MANPAGER="batman"
+export PAGER="less"
+
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/.bin:$PATH"
 
 alias find="fd"
 alias ls="exa -ah"
@@ -20,26 +28,6 @@ setopt autocd beep extendedglob nomatch notify
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
-
-if [ -d "$HOME/.local/bin" ] ;
-then PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [ -d "$HOME/.bin" ] ;
-then PATH="$HOME/.bin:$PATH"
-fi
-
-if [ -z "$XDG_CONFIG_HOME" ]; then
-    export XDG_CONFIG_HOME="$HOME/.config"
-fi
-
-if [ -z "$XDG_DATA_HOME" ]; then
-    export XDG_DATA_HOME="$HOME/.local/share"
-fi
-
-if [ -z "$XDG_CACHE_HOME" ]; then
-    export XDG_CACHE_HOME="$HOME/.cache"
-fi
 
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
     git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
