@@ -1,4 +1,1 @@
 set selection-clipboard clipboard
-map <C-u> scroll half-up
-map <C-d> scroll half-down
-map gg goto top
