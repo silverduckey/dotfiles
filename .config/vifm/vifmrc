@@ -58,4 +58,9 @@ filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
          \ identify %f
 
+noremap a :touch<space>
+noremap A :mkdir<space>
+
+noremap gs :.!lazygit<cr>
+
 colorscheme nord
