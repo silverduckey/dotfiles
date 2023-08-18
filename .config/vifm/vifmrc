@@ -23,6 +23,15 @@ set vimhelp
 set wildmenu
 set wildstyle=popup
 
+noremap a :touch<space>
+noremap A :mkdir<space>
+
+noremap gs :.!lazygit<cr>
+
+colorscheme nord
+
+view
+
 filextype {*.pdf},<application/pdf> zathura %c %i, apvlv %c, xpdf %c
 fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
 
@@ -57,10 +66,3 @@ filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
         \ nsxiv %f,
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
          \ identify %f
-
-noremap a :touch<space>
-noremap A :mkdir<space>
-
-noremap gs :.!lazygit<cr>
-
-colorscheme nord
