@@ -14,10 +14,14 @@ map o &mimeopen $f
 map O $mimeopen --ask $f
 map gs $lazygit
 
-cmd open &{{
-    case $(file --mime-type -Lb $f) in
-        text/*) lf -remote "send $id \$$EDITOR \$fx";;
-        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+cmd open ${{
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx;;
+        image/vnd.djvu|application/pdf) zathura $fx;;
+        image/*) nsxiv . $fx;;
+        audio/*) mpv $fx;;
+        video/*) mpv $fx;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
 
