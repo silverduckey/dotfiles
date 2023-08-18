@@ -1,0 +1,61 @@
+if $EDITOR != ''
+    let &vicmd = $EDITOR
+else
+    let &vicmd = "nvim"
+endif
+
+set nu
+set relativenumber
+
+set wrap
+
+set hlsearch
+set incsearch
+
+set scrolloff=8
+
+set dotfiles
+
+set shell=/bin/zsh
+
+set vimhelp
+
+set wildmenu
+set wildstyle=popup
+
+filextype {*.pdf},<application/pdf> zathura %c %i, apvlv %c, xpdf %c
+fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
+
+filextype {*.djvu},<image/vnd.djvu>
+        \ {View in zathura}
+        \ zathura %f,
+
+filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,
+         \*.aac,*.mpga},
+        \<audio/*>
+       \ {Play using mpv}
+       \ mpv --no-video %f %s,
+fileviewer {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,
+           \*.aac,*.mpga},
+          \<audio/*>
+         \ ffprobe -hide_banner -pretty %c 2>&1
+
+filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
+          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+          \*.as[fx],*.unknown_video},
+         \<video/*>
+        \ {Play using mpv}
+        \ mpv --no-video %f,
+fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
+           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+           \*.as[fx],*.unknown_video},
+          \<video/*>
+         \ ffprobe -hide_banner -pretty %c 2>&1
+
+filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
+        \ {View in nsxiv}
+        \ nsxiv %f,
+fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
+         \ identify %f
+
+colorscheme nord
