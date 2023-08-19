@@ -22,6 +22,7 @@ alias vi="command vim"
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
+alias gs="lazygit"
 
 setopt autocd beep extendedglob nomatch notify
 
