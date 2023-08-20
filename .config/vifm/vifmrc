@@ -4,6 +4,8 @@ else
     let &vicmd = "nvim"
 endif
 
+set timeoutlen=300
+
 set nu
 set relativenumber
 
@@ -28,6 +30,8 @@ set smartcase
 set syscalls
 
 set runexec
+
+set suggestoptions=normal,visual,view,keys,marks,registers
 
 noremap a :touch<space>
 noremap A :mkdir<space>
