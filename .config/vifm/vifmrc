@@ -48,7 +48,7 @@ view
 fileviewer */ exa --color=always
 fileviewer .*/ exa --color=always
 
-fileviewer *[^/],.*[^/] bat %c -p
+fileviewer {*,.*}, bat %c -p
 
 filextype {*.pdf},<application/pdf> zathura %c %i, apvlv %c, xpdf %c
 fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
