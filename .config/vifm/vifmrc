@@ -23,6 +23,12 @@ set vimhelp
 set wildmenu
 set wildstyle=popup
 
+set smartcase
+
+set syscalls
+
+set runexec
+
 noremap a :touch<space>
 noremap A :mkdir<space>
 
