@@ -1,7 +1,7 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 export TERM="xterm-256color"
-export PAGER="less"
+export PAGER="bat"
 
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
