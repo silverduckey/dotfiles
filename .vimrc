@@ -44,6 +44,8 @@ set noshowmode
 
 set laststatus=2
 
+set nocompatible
+
 syntax on
 
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -63,6 +65,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 let g:nord_uniform_diff_background = 1
@@ -92,3 +95,9 @@ let g:lightline.active = {
             \           [],
             \           [ 'absolutepath', 'modified', 'readonly', ] ],
             \ }
+
+let g:signify_sign_add               = '│'
+let g:signify_sign_delete            = '_'
+let g:signify_sign_delete_first_line = '‾'
+let g:signify_sign_change            = '~'
+let g:signify_sign_change_delete     = '~'
