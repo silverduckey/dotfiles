@@ -26,7 +26,7 @@ alias mv="mv -i"
 alias rm="rm -i"
 alias gs="lazygit"
 
-setopt autocd beep extendedglob nomatch notify
+setopt beep extendedglob nomatch notify
 
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
