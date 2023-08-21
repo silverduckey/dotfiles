@@ -45,8 +45,8 @@ colorscheme nord
 
 view
 
-fileviewer */ exa --color=always
-fileviewer .*/ exa --color=always
+fileviewer */ exa -a --color=always
+fileviewer .*/ exa -a --color=always
 
 fileviewer {*,.*}, bat %c -p
 
