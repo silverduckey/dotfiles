@@ -46,15 +46,20 @@ set laststatus=2
 
 syntax on
 
-if !has('gui_running')
-  set t_Co=256
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
+
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
 
 call plug#begin('$HOME/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'vifm/vifm.vim'
 Plug 'voldikss/vim-floaterm'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 call plug#end()
@@ -63,18 +68,12 @@ let g:nord_uniform_diff_background = 1
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_underline = 1
-
-let g:floaterm_width=0.9
-let g:floaterm_height=0.9
-
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
-
 colorscheme nord
 
 nnoremap <leader>. <cmd>Vifm<cr>
 
+let g:floaterm_width=0.9
+let g:floaterm_height=0.9
 nnoremap <leader>gs <cmd>FloatermNew lazygit<cr>
 
 nnoremap <leader>ff <cmd>Files<cr>
@@ -83,3 +82,12 @@ nnoremap <leader>fg <cmd>Rg<cr>
 nnoremap <leader>fh <cmd>Helptags<cr>
 nnoremap <leader>fr <cmd>History<cr>
 nnoremap <leader>fk <cmd>Maps<cr>
+
+let g:lightline = {
+            \ 'colorscheme': 'nord',
+            \ }
+let g:lightline.active = {
+            \ 'left': [ [ 'mode', 'paste' ],
+            \           [],
+            \           [ 'absolutepath', 'modified', 'readonly', ] ],
+            \ }
