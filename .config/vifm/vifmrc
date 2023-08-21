@@ -36,10 +36,10 @@ echo "Note: using `".$EDITOR."` as an editor"
 let &vicmd = $EDITOR
 endif
 
-noremap a :touch<space>
-noremap A :mkdir<space>
+nnoremap a :touch<space>
+nnoremap A :mkdir<space>
 
-noremap gs :.!lazygit<cr>
+nnoremap gs :.!lazygit<cr>
 
 colorscheme nord
 
