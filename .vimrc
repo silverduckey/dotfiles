@@ -29,7 +29,7 @@ set termguicolors
 
 set scrolloff=8
 set signcolumn=yes
-set isfname:("@-@")
+set isfname+=("@-@")
 
 set updatetime=50
 
@@ -62,6 +62,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 let g:nord_uniform_diff_background = 1
