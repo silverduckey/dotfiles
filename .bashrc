@@ -26,7 +26,7 @@ alias mv="mv -i"
 alias rm="rm -i"
 alias gs="lazygit"
 
-shopt -s autocd extglob
+shopt -s extglob
 
 set -o vi
 
