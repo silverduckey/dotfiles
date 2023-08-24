@@ -3,13 +3,8 @@ export VISUAL="nvim"
 export TERM="xterm-256color"
 export PAGER="bat -p"
 
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_CACHE_HOME="$HOME/.cache"
-
-PATH="$HOME/.local/bin:$PATH"
-PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
 alias find="fd"
 alias ls="exa -ah"
@@ -26,10 +21,10 @@ alias gs="lazygit"
 
 setopt beep extendedglob nomatch notify
 
-[[ -e ${ZDOTDIR:-~}/.antidote ]] ||
-    git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+[[ -e $ZDOTDIR/.antidote ]] ||
+    git clone https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
 
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+source $ZDOTDIR/.antidote/antidote.zsh
 antidote load
 
 bindkey -v
