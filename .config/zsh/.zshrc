@@ -11,8 +11,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.bin:$PATH"
 
-eval "$(zoxide init zsh --cmd cd)"
-
 alias find="fd"
 alias ls="exa -ah"
 alias ll="exa -alh"
@@ -59,3 +57,5 @@ preexec() { echo -ne "\e[5 q" ;}
 colorscript -r
 
 eval "$(starship init zsh)"
+
+eval "$(zoxide init zsh --cmd cd)"

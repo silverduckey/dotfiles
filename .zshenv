@@ -1,1 +1,1 @@
-ZDOTDIR=$HOME/.config/zsh
+ZDOTDIR=$HOME/XDG_CONFIG_HOME/zsh
