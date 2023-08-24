@@ -28,10 +28,6 @@ alias gs="lazygit"
 
 setopt beep extendedglob nomatch notify
 
-zstyle :compinstall filename "$HOME/.zshrc"
-autoload -Uz compinit
-compinit
-
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
     git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
