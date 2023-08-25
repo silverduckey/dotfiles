@@ -80,12 +80,11 @@ let g:floaterm_width=0.9
 let g:floaterm_height=0.9
 nnoremap <leader>gs <cmd>FloatermNew lazygit<cr>
 
-nnoremap <leader>ff <cmd>Files<cr>
-nnoremap <leader>fb <cmd>Buffers<cr>
-nnoremap <leader>fg <cmd>Rg<cr>
-nnoremap <leader>fh <cmd>Helptags<cr>
-nnoremap <leader>fr <cmd>History<cr>
-nnoremap <leader>fk <cmd>Maps<cr>
+nnoremap <leader>wf <cmd>Files<cr>
+nnoremap <leader>wb <cmd>Buffers<cr>
+nnoremap <leader>wg <cmd>Rg<cr>
+nnoremap <leader>wh <cmd>Helptags<cr>
+nnoremap <leader>wo <cmd>History<cr>
 
 let g:lightline = {
             \ 'colorscheme': 'nord',
