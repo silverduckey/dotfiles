@@ -59,7 +59,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin('$HOME/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
-Plug 'vifm/vifm.vim'
+Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -74,7 +74,8 @@ let g:nord_italic_comments = 1
 let g:nord_underline = 1
 colorscheme nord
 
-nnoremap <leader>. <cmd>Vifm<cr>
+let g:lf_map_keys = 0
+nnoremap <leader>. :Lf<cr>
 
 let g:floaterm_title=""
 let g:floaterm_width=0.9
