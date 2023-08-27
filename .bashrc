@@ -14,8 +14,6 @@ PATH="$HOME/.bin:$PATH"
 PATH="$HOME/go/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 
-eval "$(zoxide init bash --cmd cd)"
-
 alias find="fd"
 alias ls="exa -ah"
 alias ll="exa -alh"
@@ -35,3 +33,7 @@ set -o vi
 colorscript -r
 
 eval "$(starship init bash)"
+
+eval "$(zoxide init bash --cmd cd)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

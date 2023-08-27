@@ -8,6 +8,7 @@ set icons
 set number
 set relativenumber
 set incsearch
+set tabstop 4
 set drawbox
 set previewer pistol
 
@@ -60,7 +61,7 @@ lf -remote "send $id cd \"$result\""
 }}
 
 cmd fzf_files ${{
-res="$(find . -maxdepth 1 | fzf --reverse --header='Find files')"
+res="$(fd -H . | fzf --reverse --header='Find files')"
 if [ -n "$res" ]; then
 if [ -d "$res" ]; then
 cmd="cd"
@@ -86,14 +87,18 @@ fzf --bind "change:reload:$RG_PREFIX {q} || true" \
 map m
 map d
 map y
+map c
+map r
 map w
+map f
 
 map mf :push %touch<space>
 map md :push %mkdir<space>
 map dd cut
-map DD delete
+map dD delete
 map yy copy
 map cp :push %chmod<space>
+map co :push %chown<space>
 map cw rename
 map cd cdi
 map gs $lazygit
