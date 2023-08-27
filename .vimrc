@@ -75,6 +75,7 @@ let g:nord_underline = 1
 colorscheme nord
 
 let g:lf_map_keys = 0
+let g:lf_replace_netrw = 1
 nnoremap <leader>. :Lf<cr>
 
 let g:floaterm_title=""
