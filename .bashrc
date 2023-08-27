@@ -10,6 +10,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.bin:$PATH"
+PATH="$HOME/go/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(zoxide init bash --cmd cd)"
 
