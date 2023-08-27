@@ -5,6 +5,7 @@ export PAGER="bat -p"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 alias find="fd"
 alias ls="exa -ah"
