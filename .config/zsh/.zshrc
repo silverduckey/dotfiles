@@ -23,7 +23,7 @@ alias gs="lazygit"
 
 setopt beep extendedglob nomatch notify
 
-[[ -e $ZDOTDIR/.antidote ]] ||
+[[ ! -d $ZDOTDIR/.antidote ]] &&
     git clone https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
 
 source $ZDOTDIR/.antidote/antidote.zsh
@@ -57,4 +57,6 @@ eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh --cmd cd)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ ! -d $HOME/.fzf ]] &&
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
+    && ~/.fzf/install

@@ -36,4 +36,6 @@ eval "$(starship init bash)"
 
 eval "$(zoxide init bash --cmd cd)"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[[ ! -d $HOME/.fzf ]] &&
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
+    && ~/.fzf/install
