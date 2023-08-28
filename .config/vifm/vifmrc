@@ -21,19 +21,17 @@ if executable("nvim")
     set vicmd="nvim"
 elseif executable("vim")
     set vicmd="vim"
-elseif $EDITOR != ""
-    echo "Note: using `".$EDITOR."` as an editor"
-    set vicmd = "$EDITOR"
 endif
 
 set millerview
 set milleroptions="lsize:1,csize:2,rsize:3,rpreview:all"
+only
 
 set dotfiles
 
 set syscalls
 
-only
+set suggestoptions=normal,visual,view,keys,marks,registers
 
 colorscheme nord
 
@@ -80,3 +78,5 @@ filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
           \ nsxiv %f,
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
            \ identify %f
+
+nnoremap gs :.!lazygit<cr>
