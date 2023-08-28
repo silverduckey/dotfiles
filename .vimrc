@@ -44,6 +44,8 @@ set noshowmode
 
 set laststatus=2
 
+set mouse=a
+
 set nocompatible
 
 syntax on
