@@ -98,6 +98,6 @@ map co :push %chown<space>
 map cw rename
 map cd cdi
 map gs $lazygit
-map pf fzf_files
-map pg fzf_grep
+map wf fzf_files
+map wg fzf_grep
 map ZZ quit
