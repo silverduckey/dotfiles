@@ -20,7 +20,7 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 alias gs="lazygit"
-alias wf="fzf_files.sh"
+alias wf=". fzf_files.sh"
 
 setopt beep extendedglob nomatch notify
 
