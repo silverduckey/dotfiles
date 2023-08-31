@@ -75,7 +75,6 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:nord_underline = 1
 colorscheme nord
-hi Normal guibg=NONE ctermbg=NONE
 
 let g:lf_map_keys = 0
 let g:lf_replace_netrw = 1
