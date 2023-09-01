@@ -7,4 +7,4 @@ fzf --bind "change:reload:$RG_PREFIX {q} || true" \
 --ansi --reverse --header 'Grep files' \
 | cut -d':' -f1 | sed 's/\\/\\\\/g;s/"/\\"/g'
 )"
-[ -n "$res" ] && lf -remote "send $id select \"$res\""
+[ -n "$res" ] && nvim "$res"
