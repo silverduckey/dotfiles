@@ -21,6 +21,7 @@ alias mv="mv -i"
 alias rm="rm -i"
 alias gs="lazygit"
 alias wf=". fzf_files.sh"
+alias wg=". fzf_grep.sh"
 
 setopt beep extendedglob nomatch notify
 
