@@ -61,7 +61,7 @@ lf -remote "send $id cd \"$result\""
 }}
 
 cmd fzf_files ${{
-res="$(fd -H . | fzf --ansi --reverse --header='Find files')"
+res="$(fd -H . | fzf --ansi --reverse --header='Find files' --preview 'pistol {}')"
 if [ -n "$res" ]; then
 if [ -d "$res" ]; then
 cmd="cd"
