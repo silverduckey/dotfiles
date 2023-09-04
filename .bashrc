@@ -43,3 +43,5 @@ eval "$(zoxide init bash --cmd cd)"
     && ~/.fzf/install
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source /home/vu/.config/broot/launcher/bash/br
