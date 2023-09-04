@@ -1,6 +1,6 @@
 ## Note:
 For people who use Arch or any Arch based distrobution then you will have to compile
-vim and lf from source with the following command:
+vim from source with the following command:
 ```
 git clone https://github.com/vim/vim.git
 cd vim
@@ -10,6 +10,5 @@ cd vim
             --prefix=/usr/local
 make
 sudo make install
-go install github.com/gokcehan/lf@latest
 ```
 to get all the features working.
