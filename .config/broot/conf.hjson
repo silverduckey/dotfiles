@@ -1,0 +1,23 @@
+default_flags: h
+
+modal: true
+
+show_selection_mark: true
+
+true_colors: true
+
+imports: [
+    verbs.hjson
+    {
+        luma: [
+            dark
+            unknown
+        ]
+        file: skins/dark-blue.hjson
+    }
+
+    {
+        luma: light
+        file: skins/white.hjson
+    }
+]
