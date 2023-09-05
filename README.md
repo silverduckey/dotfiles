@@ -3,11 +3,7 @@ For people who use Arch or any Arch based distrobution then you will have to com
 vim from source with the following command:
 ```
 git clone https://github.com/vim/vim.git
-cd vim
-./configure --with-features=huge \
-            --enable-multibyte \
-            --enable-cscope \
-            --prefix=/usr/local
+cd vim/src
 make
 sudo make install
 ```
