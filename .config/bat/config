@@ -1,3 +1,4 @@
---theme="base16"
---color=always
 --italic-text=always
+--force-colorization
+--theme="base16"
+--style=full
