@@ -34,9 +34,4 @@ verbs: [
         set_working_dir: true
         leave_broot: false
     }
-
-    {
-        key: ctrl-g
-        execution: ":toggle_git_status"
-    }
 ]
