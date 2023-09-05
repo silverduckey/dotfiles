@@ -1,8 +1,6 @@
-default_flags: h
+default_flags: ghI
 
 modal: true
-
-show_selection_mark: true
 
 true_colors: true
 
