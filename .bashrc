@@ -40,9 +40,9 @@ eval "$(starship init bash)"
 eval "$(zoxide init bash --cmd cd)"
 
 [[ ! -d $HOME/.fzf ]] &&
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
-    && ~/.fzf/install
+    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
+    $HOME/.fzf/install
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
 
-source /home/vu/.config/broot/launcher/bash/br
+source $XDG_CONFIG_HOME/broot/launcher/bash/br
