@@ -53,6 +53,7 @@ rm -rf $1
 
 cmd on-select &{{
 lf -remote "send $id set statfmt \"$(exa -ld --color=always "$f")\""
+lf -remote "send $id set promptfmt \"$(exa -d --color=always "$f")\""
 }}
 
 cmd cdi ${{
