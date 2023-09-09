@@ -44,5 +44,3 @@ eval "$(zoxide init bash --cmd cd)"
     $HOME/.fzf/install
 
 [ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
-
-source $XDG_CONFIG_HOME/broot/launcher/bash/br
