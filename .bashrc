@@ -42,5 +42,3 @@ eval "$(zoxide init bash --cmd cd)"
 [[ ! -d $HOME/.fzf ]] &&
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
     $HOME/.fzf/install
-
-[ -f $HOME/.fzf.bash ] && source $HOME/.fzf.bash
