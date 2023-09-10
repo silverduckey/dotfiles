@@ -34,10 +34,13 @@ antidote load
 
 bindkey -v
 export KEYTIMEOUT=1
-bindkey -M vicmd "k" history-substring-search-up
-bindkey -M vicmd "j" history-substring-search-down
+
+bindkey "^G" autosuggest-accept
+
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
+bindkey -M vicmd "k" history-substring-search-up
+bindkey -M vicmd "j" history-substring-search-down
 
 function zle-keymap-select () {
 case $KEYMAP in
