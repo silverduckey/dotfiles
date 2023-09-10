@@ -29,14 +29,8 @@ setopt beep extendedglob nomatch notify
 [[ ! -d $ZDOTDIR/.antidote ]] &&
     git clone --depth=1 https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
 
-zsh_plugins=$ZDOTDIR/.zsh_plugins
-if [[ ! $zsh_plugins.zsh -nt $zsh_plugins.txt ]]; then
-    (
-    source $ZDOTDIR/.antidote/antidote.zsh
-    antidote load
-)
-fi
-source $zsh_plugins.zsh
+source $ZDOTDIR/.antidote/antidote.zsh
+antidote load
 
 bindkey -v
 export KEYTIMEOUT=1
