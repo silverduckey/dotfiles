@@ -1,7 +1,6 @@
 romkatv/zsh-bench kind:path
 
 belak/zsh-utils path:history
-belak/zsh-utils path:utility
 
 zdharma-continuum/fast-syntax-highlighting kind:defer
 
