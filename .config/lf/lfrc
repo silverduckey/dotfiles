@@ -51,10 +51,6 @@ zip -r $1.zip $1
 rm -rf $1
 }}
 
-cmd on-select &{{
-lf -remote "send $id set statfmt \"$(exa -ld --color=always "$f")\""
-}}
-
 cmd cdi ${{
 result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
 lf -remote "send $id cd \"$result\""
