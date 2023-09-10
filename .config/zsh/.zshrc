@@ -27,10 +27,16 @@ alias wg=". fzf_grep.sh"
 setopt beep extendedglob nomatch notify
 
 [[ ! -d $ZDOTDIR/.antidote ]] &&
-    git clone https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
+    git clone --depth=1 https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
 
-source $ZDOTDIR/.antidote/antidote.zsh
-antidote load
+zsh_plugins=$ZDOTDIR/.zsh_plugins
+if [[ ! $zsh_plugins.zsh -nt $zsh_plugins.txt ]]; then
+    (
+    source $ZDOTDIR/.antidote/antidote.zsh
+    antidote load
+)
+fi
+source $zsh_plugins.zsh
 
 bindkey -v
 export KEYTIMEOUT=1
