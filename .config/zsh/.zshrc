@@ -35,13 +35,6 @@ antidote load
 bindkey -v
 export KEYTIMEOUT=1
 
-bindkey "^G" autosuggest-accept
-
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
-bindkey -M vicmd "k" history-substring-search-up
-bindkey -M vicmd "j" history-substring-search-down
-
 function zle-keymap-select () {
 case $KEYMAP in
     vicmd) echo -ne "\e[1 q";;
@@ -56,6 +49,19 @@ echo -ne "\e[5 q"
 zle -N zle-line-init
 echo -ne "\e[5 q"
 preexec() { echo -ne "\e[5 q" ;}
+
+bindkey -M menuselect "^Y" accept-line
+bindkey "\t" menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect "\t" menu-complete "$terminfo[kcbt]" reverse-menu-complete
+bindkey "^N" menu-select "^P" menu-select
+bindkey -M menuselect "^N" menu-complete "^P" reverse-menu-complete
+
+bindkey "^G" autosuggest-accept
+
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+bindkey -M vicmd "k" history-substring-search-up
+bindkey -M vicmd "j" history-substring-search-down
 
 colorscript -r
 

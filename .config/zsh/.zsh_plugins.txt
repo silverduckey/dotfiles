@@ -7,5 +7,9 @@ zdharma-continuum/fast-syntax-highlighting kind:defer
 zsh-users/zsh-completions path:src kind:fpath
 belak/zsh-utils path:completion
 
+marlonrichert/zsh-autocomplete
+
+hlissner/zsh-autopair kind:defer
+
 zsh-users/zsh-autosuggestions kind:defer
 zsh-users/zsh-history-substring-search
