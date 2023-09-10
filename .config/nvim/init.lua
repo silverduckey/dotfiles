@@ -1,3 +1,3 @@
-require("core.options")
-require("core.lazy")
-require("core.keymaps")
+require("vu.opts")
+require("vu.lazy")
+require("vu.keymaps")

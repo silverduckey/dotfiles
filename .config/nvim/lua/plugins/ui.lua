@@ -1,31 +1,5 @@
 return {
     {
-        "goolord/alpha-nvim",
-        event = "VimEnter",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        config = function()
-            local alpha = require("alpha")
-            local startify = require("alpha.themes.startify")
-            local fortune = require("alpha.fortune")
-
-            startify.section.header.val = fortune()
-
-            startify.section.top_buttons.val = {
-                startify.button("n", "  New file", "<CMD>ene <BAR> startinsert <CR>"),
-                startify.button(".", "  File explorer", "<CMD>Lf<CR>"),
-            }
-
-            startify.section.bottom_buttons.val = {
-                startify.button("q", "  Quit", "<CMD>qa<CR>"),
-            }
-
-            alpha.setup(startify.config)
-        end,
-    },
-
-    {
         "nvim-lualine/lualine.nvim",
         event = "VimEnter",
         dependencies = {
@@ -64,11 +38,6 @@ return {
                         {
                             "filename",
                             path = 3,
-                            symbols = {
-                                modified = "●",
-                                readonly = "",
-                                newfile = "",
-                            },
                         },
                     },
                 },

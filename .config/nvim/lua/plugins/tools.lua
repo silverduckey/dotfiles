@@ -4,6 +4,7 @@ return {
         cmd = "Telescope",
         keys = {
             { "<leader>wf", "<CMD>Telescope find_files<CR>", desc = "Telescope find files" },
+            { "<leader>gf", "<CMD>Telescope git_files<CR>", desc = "Telescope git files" },
             { "<leader>wb", "<CMD>Telescope buffers<CR>",    desc = "Telescope buffers" },
             { "<leader>wg", "<CMD>Telescope live_grep<CR>",  desc = "Telescope live grep" },
             { "<leader>h",  "<CMD>Telescope help_tags<CR>",  desc = "Telescope help tags" },

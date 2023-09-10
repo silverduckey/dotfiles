@@ -20,6 +20,7 @@ return {
                     "bash",
                     "markdown",
                     "markdown_inline",
+                    "regex",
                     "toml",
                     "yaml",
                     "ini",
