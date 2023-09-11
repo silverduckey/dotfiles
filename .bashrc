@@ -33,12 +33,12 @@ shopt -s extglob
 
 set -o vi
 
-colorscript -r
+[[ ! -d $HOME/.fzf ]] &&
+    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
+    $HOME/.fzf/install --all
 
-eval "$(starship init bash)"
+colorscript -r
 
 eval "$(zoxide init bash --cmd cd)"
 
-[[ ! -d $HOME/.fzf ]] &&
-    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
-    $HOME/.fzf/install
+eval "$(starship init bash)"

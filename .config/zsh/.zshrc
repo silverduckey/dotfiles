@@ -35,6 +35,10 @@ export KEYTIMEOUT=1
 source $ZDOTDIR/.antidote/antidote.zsh
 antidote load
 
+[[ ! -d $HOME/.fzf ]] &&
+    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
+    $HOME/.fzf/install --all
+
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
 ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
@@ -58,10 +62,6 @@ bindkey -M vicmd "j" history-substring-search-down
 
 colorscript -r
 
-eval "$(starship init zsh)"
-
 eval "$(zoxide init zsh --cmd cd)"
 
-[[ ! -d $HOME/.fzf ]] &&
-    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
-    $HOME/.fzf/install
+eval "$(starship init zsh)"
