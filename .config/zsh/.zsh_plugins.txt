@@ -2,6 +2,8 @@ romkatv/zsh-bench kind:path
 
 belak/zsh-utils path:history
 
+jeffreytse/zsh-vi-mode
+
 marlonrichert/zcolors
 zsh-users/zsh-syntax-highlighting
 

@@ -29,26 +29,17 @@ setopt beep extendedglob nomatch notify
 bindkey -v
 export KEYTIMEOUT=1
 
-function zle-keymap-select () {
-case $KEYMAP in
-    vicmd) echo -ne "\e[1 q";;
-    viins|main) echo -ne "\e[5 q";;
-esac
-}
-zle -N zle-keymap-select
-zle-line-init() {
-zle -K viins
-echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne "\e[5 q"
-preexec() { echo -ne "\e[5 q" ;}
-
 [[ ! -d $ZDOTDIR/.antidote ]] &&
     git clone --depth=1 https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
 
 source $ZDOTDIR/.antidote/antidote.zsh
 antidote load
+
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 
 zcolors >| $ZDOTDIR/.zcolors
 
