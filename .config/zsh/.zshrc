@@ -26,12 +26,6 @@ alias wg=". fzf_grep.sh"
 
 setopt beep extendedglob nomatch notify
 
-[[ ! -d $ZDOTDIR/.antidote ]] &&
-    git clone --depth=1 https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
-
-source $ZDOTDIR/.antidote/antidote.zsh
-antidote load
-
 bindkey -v
 export KEYTIMEOUT=1
 
@@ -49,6 +43,14 @@ echo -ne "\e[5 q"
 zle -N zle-line-init
 echo -ne "\e[5 q"
 preexec() { echo -ne "\e[5 q" ;}
+
+[[ ! -d $ZDOTDIR/.antidote ]] &&
+    git clone --depth=1 https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
+
+source $ZDOTDIR/.antidote/antidote.zsh
+antidote load
+
+zcolors >| $ZDOTDIR/.zcolors
 
 bindkey -M menuselect "^Y" accept-line
 bindkey "\t" menu-select "$terminfo[kcbt]" menu-select

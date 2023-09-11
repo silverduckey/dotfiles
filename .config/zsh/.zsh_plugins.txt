@@ -2,7 +2,8 @@ romkatv/zsh-bench kind:path
 
 belak/zsh-utils path:history
 
-zdharma-continuum/fast-syntax-highlighting kind:defer
+marlonrichert/zcolors
+zsh-users/zsh-syntax-highlighting
 
 zsh-users/zsh-completions path:src kind:fpath
 belak/zsh-utils path:completion
