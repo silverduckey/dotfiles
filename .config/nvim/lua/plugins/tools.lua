@@ -3,18 +3,25 @@ return {
         "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
         keys = {
-            { "<leader>wf", "<CMD>Telescope find_files<CR>", desc = "Telescope find files" },
-            { "<leader>gf", "<CMD>Telescope git_files<CR>", desc = "Telescope git files" },
-            { "<leader>wb", "<CMD>Telescope buffers<CR>",    desc = "Telescope buffers" },
-            { "<leader>wg", "<CMD>Telescope live_grep<CR>",  desc = "Telescope live grep" },
-            { "<leader>h",  "<CMD>Telescope help_tags<CR>",  desc = "Telescope help tags" },
-            { "<leader>o",  "<CMD>Telescope oldfiles<CR>",   desc = "Telescope oldfiles" },
+            { "<leader>wf", "<CMD>Telescope find_files<CR>",  desc = "Telescope find files" },
+            { "<leader>gf", "<CMD>Telescope git_files<CR>",   desc = "Telescope git files" },
+            { "<leader>wb", "<CMD>Telescope buffers<CR>",     desc = "Telescope buffers" },
+            { "<leader>wg", "<CMD>Telescope live_grep<CR>",   desc = "Telescope live grep" },
+            { "<leader>h",  "<CMD>Telescope help_tags<CR>",   desc = "Telescope help tags" },
+            { "<leader>o",  "<CMD>Telescope oldfiles<CR>",    desc = "Telescope oldfiles" },
+            { "<leader>cd", "<CMD>Telescope zoxide list<CR>", desc = "Telescope zoxide list" },
         },
         dependencies = {
             "nvim-lua/plenary.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build = "make",
+            },
+            {
+                "jvgrootveld/telescope-zoxide",
+                dependencies = {
+                    "nvim-lua/popup.nvim"
+                },
             },
         },
         config = function()
@@ -30,6 +37,7 @@ return {
             })
 
             require("telescope").load_extension("fzf")
+            require("telescope").load_extension("zoxide")
         end,
     },
 

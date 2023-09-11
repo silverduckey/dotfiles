@@ -68,6 +68,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'mhinz/vim-signify'
+Plug 'nanotee/zoxide.vim'
+Plug 'mbbill/undotree'
 call plug#end()
 
 let g:nord_uniform_diff_background = 1
@@ -78,7 +80,7 @@ colorscheme nord
 
 let g:lf_map_keys = 0
 let g:lf_replace_netrw = 1
-nnoremap <leader>. :Lf<cr>
+nnoremap <leader>. <cmd>Lf<cr>
 
 let g:floaterm_title=""
 let g:floaterm_width=0.9
@@ -99,3 +101,7 @@ let g:lightline.active = {
             \           [],
             \           [ 'absolutepath', 'modified', 'readonly', ] ],
             \ }
+
+nnoremap <leader>cd <cmd>Zi<cr>
+
+nnoremap <leader>u <cmd>UndotreeToggle<cr>
