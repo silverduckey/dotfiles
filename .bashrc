@@ -26,8 +26,9 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 alias gs="lazygit"
-alias wf=". fzf_files.sh"
-alias wg=". fzf_grep.sh"
+alias wf=". fzf_find_files.sh"
+alias wg=". fzf_live_grep.sh"
+alias gf=". fzf_git_files.sh"
 
 shopt -s extglob
 

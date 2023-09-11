@@ -1,4 +1,3 @@
-set shell zsh
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 8
@@ -56,7 +55,7 @@ result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
 lf -remote "send $id cd \"$result\""
 }}
 
-cmd fzf_files ${{
+cmd fzf_find_files ${{
 res="$(fd -H . | fzf --ansi --reverse --header='Find files' --preview 'pistol {}')"
 if [ -n "$res" ]; then
 if [ -d "$res" ]; then
@@ -69,7 +68,7 @@ lf -remote "send $id $cmd \"$res\""
 fi
 }}
 
-cmd fzf_grep ${{
+cmd fzf_live_grep ${{
 RG_PREFIX="rg --hidden --column --line-number --no-heading --color=always --smart-case "
 res="$(
 FZF_DEFAULT_COMMAND="$RG_PREFIX ''" \
@@ -78,6 +77,19 @@ fzf --bind "change:reload:$RG_PREFIX {q} || true" \
 | cut -d':' -f1 | sed 's/\\/\\\\/g;s/"/\\"/g'
 )"
 [ -n "$res" ] && lf -remote "send $id select \"$res\""
+}}
+
+cmd fzf_git_files ${{
+res="$(fd -H --ignore-file .gitignore . | fzf --ansi --reverse --header='Git files' --preview 'pistol {}')"
+if [ -n "$res" ]; then
+if [ -d "$res" ]; then
+cmd="cd"
+else
+cmd="select"
+fi
+res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+lf -remote "send $id $cmd \"$res\""
+fi
 }}
 
 map m
@@ -94,6 +106,7 @@ map co :push %chown<space>
 map cw rename
 map cd cdi
 map gs $lazygit
-map wf fzf_files
-map wg fzf_grep
+map wf fzf_find_files
+map wg fzf_live_grep
+map gf fzf_git_files
 map ZZ quit
