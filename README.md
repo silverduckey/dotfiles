@@ -15,3 +15,5 @@ If you have already installed fzf from the official fzf github repo then to enab
     [[ -d $HOME/.fzf ]] && rm -rf $HOME/.fzf
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install --all
+
+I also added a user.js file. All you need to do is to rename the profile_name directory to your firefox profile name.
