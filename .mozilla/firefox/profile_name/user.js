@@ -11,6 +11,8 @@ user_pref("browser.newtabpage.activity-stream.default.sites", "");
 
 user_pref("_user.js.parrot", "0200 syntax error: the parrot's definitely deceased!");
 user_pref("geo.provider.network.url", "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%");
+user_pref("geo.provider.ms-windows-location", false);
+user_pref("geo.provider.use_corelocation", false);
 user_pref("geo.provider.use_gpsd", false);
 user_pref("geo.provider.use_geoclue", false);
 user_pref("intl.accept_languages", "en-US, en");
