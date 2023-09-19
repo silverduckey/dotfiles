@@ -1,11 +1,11 @@
 user_pref("nglayout.initialpaint.delay", 0);
 user_pref("nglayout.initialpaint.delay_in_oopif", 0);
 user_pref("content.notify.interval", 100000);
-user_pref("browser.startup.preXulSkeletonUI", false);
 
 user_pref("layout.css.grid-template-masonry-value.enabled", true);
 user_pref("dom.enable_web_task_scheduling", true);
 user_pref("layout.css.has-selector.enabled", true);
+user_pref("dom.security.sanitizer.enabled", true);
 
 user_pref("gfx.canvas.accelerated.cache-items", 4096);
 user_pref("gfx.canvas.accelerated.cache-size", 512);
@@ -24,12 +24,11 @@ user_pref("network.buffer.cache.count", 128);
 user_pref("network.http.max-connections", 1800);
 user_pref("network.http.max-persistent-connections-per-server", 10);
 user_pref("network.http.max-urgent-start-excessive-connections-per-host", 5);
-user_pref("network.websocket.max-connections", 400);
 user_pref("network.http.pacing.requests.enabled", false);
-user_pref("network.dnsCacheEntries", 10000);
+user_pref("network.dnsCacheEntries", 1000);
 user_pref("network.dnsCacheExpiration", 86400);
 user_pref("network.dns.max_high_priority_threads", 8);
-user_pref("network.ssl_tokens_cache_capacity", 20480);
+user_pref("network.ssl_tokens_cache_capacity", 10240);
 
 user_pref("network.http.speculative-parallel-limit", 0);
 user_pref("network.dns.disablePrefetch", true);
@@ -147,7 +146,6 @@ user_pref("browser.display.focus_ring_on_anything", true);
 user_pref("browser.display.focus_ring_style", 0);
 user_pref("browser.display.focus_ring_width", 0);
 user_pref("browser.privateWindowSeparation.enabled", false);
-user_pref("browser.privatebrowsing.enable-new-indicator", false);
 user_pref("cookiebanners.service.mode", 2);
 user_pref("cookiebanners.service.mode.privateBrowsing", 2);
 user_pref("browser.translations.enable", true);
@@ -185,4 +183,10 @@ user_pref("general.smoothScroll", true);
 user_pref("mousewheel.default.delta_multiplier_y", 275);
 
 user_pref("identity.fxaccounts.enabled", true);
-user_pref("dom.push.enabled", true);
+
+user_pref("signon.rememberSignons", true);
+
+user_pref("extensions.formautofill.addresses.enabled", true);
+user_pref("extensions.formautofill.creditCards.enabled", true);
+
+user_pref("browser.search.suggest.enabled", true);
