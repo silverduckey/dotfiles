@@ -61,7 +61,7 @@ user_pref("privacy.history.custom", true);
 
 user_pref("browser.search.separatePrivateDefault.ui.enabled", true);
 user_pref("browser.urlbar.update2.engineAliasRefresh", true);
-user_pref("browser.search.suggest.enabled", false);
+user_pref("browser.search.suggest.enabled", true);
 user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
 user_pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
 user_pref("browser.formfill.enable", false);
@@ -71,11 +71,11 @@ user_pref("network.IDN_show_punycode", true);
 
 user_pref("dom.security.https_first", true);
 
-user_pref("signon.rememberSignons", false);
+user_pref("signon.rememberSignons", true);
 user_pref("editor.truncate_user_pastes", false);
 
-user_pref("extensions.formautofill.addresses.enabled", false);
-user_pref("extensions.formautofill.creditCards.enabled", false);
+user_pref("extensions.formautofill.addresses.enabled", true);
+user_pref("extensions.formautofill.creditCards.enabled", true);
 
 user_pref("network.auth.subresource-http-auth-allow", 1);
 user_pref("security.mixed_content.block_display_content", true);
@@ -93,7 +93,7 @@ user_pref("media.peerconnection.ice.default_address_only", true);
 user_pref("browser.safebrowsing.downloads.remote.enabled", false);
 
 user_pref("accessibility.force_disabled", 1);
-user_pref("identity.fxaccounts.enabled", false);
+user_pref("identity.fxaccounts.enabled", true);
 user_pref("browser.tabs.firefox-view", false);
 user_pref("permissions.default.desktop-notification", 2);
 user_pref("permissions.default.geo", 2);
@@ -177,16 +177,3 @@ user_pref("browser.tabs.loadBookmarksInTabs", true);
 user_pref("browser.bookmarks.openInTabClosesMenu", false);
 user_pref("browser.menu.showViewImageInfo", true);
 user_pref("findbar.highlightAll", true);
-
-user_pref("apz.overscroll.enabled", true);
-user_pref("general.smoothScroll", true);
-user_pref("mousewheel.default.delta_multiplier_y", 275);
-
-user_pref("identity.fxaccounts.enabled", true);
-
-user_pref("signon.rememberSignons", true);
-
-user_pref("extensions.formautofill.addresses.enabled", true);
-user_pref("extensions.formautofill.creditCards.enabled", true);
-
-user_pref("browser.search.suggest.enabled", true);
