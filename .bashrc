@@ -42,4 +42,6 @@ colorscript -r
 
 eval "$(zoxide init bash --cmd cd)"
 
+eval "$(thefuck --alias f)"
+
 eval "$(starship init bash)"

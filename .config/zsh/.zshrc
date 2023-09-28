@@ -66,4 +66,6 @@ colorscript -r
 
 eval "$(zoxide init zsh --cmd cd)"
 
+eval "$(thefuck --alias f)"
+
 eval "$(starship init zsh)"
