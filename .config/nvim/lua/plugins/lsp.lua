@@ -5,11 +5,7 @@ return {
         event = "VeryLazy",
         config = function()
             local ensure_installed = {
-                "selene",
-                "revive",
-                "shellcheck",
                 "shfmt",
-                "vint",
             }
 
             require("mason").setup({
@@ -99,7 +95,7 @@ return {
                 on_attach = on_attach,
             })
 
-            lspconfig.remark_ls.setup({
+            lspconfig.vale_ls.setup({
                 capabilities = capabilities,
                 on_attach = on_attach,
             })
@@ -157,20 +153,20 @@ return {
     },
 
     {
-        "mfussenegger/nvim-lint",
+        "rshkarin/mason-nvim-lint",
         event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            "williamboman/mason.nvim",
+            "mfussenegger/nvim-lint",
+        },
         config = function()
-            require("lint").linters_by_ft = {
-                lua = { "selene" },
-                go = { "revive" },
-                sh = { "shellcheck" },
-                vim = { "vint" },
-            }
-
-            api.nvim_create_autocmd({ "BufWritePost" }, {
-                callback = function()
-                    require("lint").try_lint()
-                end,
+            require("mason-nvim-lint").setup({
+                ensure_installed = {
+                    "selene",
+                    "revive",
+                    "shellcheck",
+                    "vint",
+                }
             })
         end,
     },
