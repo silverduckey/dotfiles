@@ -217,16 +217,15 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         event = { "BufReadPre", "BufNewFile" },
+        main = "ibl",
         config = function()
-            require("indent_blankline").setup({
-                char = "",
-                char_blankline = "",
-                context_char = "",
-                context_char_blankline = "",
-                use_treesitter = true,
-                use_treesitter_scope = true,
-                show_current_context = true,
-                show_current_context_start = true,
+            require("ibl").setup({
+                indent = {
+                    char = "",
+                },
+                scope = {
+                    char = "",
+                },
             })
         end,
     },
