@@ -40,8 +40,6 @@ set -o vi
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
     $HOME/.fzf/install --all
 
-colorscript -r
-
 eval "$(zoxide init bash --cmd cd)"
 
 eval "$(thefuck --alias f)"

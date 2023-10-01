@@ -48,6 +48,8 @@ set mouse=a
 
 set nocompatible
 
+set noshowmode
+
 syntax on
 
 if empty(glob('~/.vim/autoload/plug.vim'))

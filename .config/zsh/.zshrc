@@ -49,22 +49,12 @@ ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 
-zcolors >| $ZDOTDIR/.zcolors
-
-bindkey -M menuselect "^Y" accept-line
-bindkey "\t" menu-select "$terminfo[kcbt]" menu-select
-bindkey -M menuselect "\t" menu-complete "$terminfo[kcbt]" reverse-menu-complete
-bindkey "^N" menu-select "^P" menu-select
-bindkey -M menuselect "^N" menu-complete "^P" reverse-menu-complete
-
 bindkey "^G" autosuggest-accept
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
 bindkey -M vicmd "j" history-substring-search-down
-
-colorscript -r
 
 eval "$(zoxide init zsh --cmd cd)"
 

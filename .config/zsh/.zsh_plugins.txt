@@ -4,15 +4,12 @@ belak/zsh-utils path:history
 
 jeffreytse/zsh-vi-mode
 
-marlonrichert/zcolors
-zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-syntax-highlighting kind:defer
 
 zsh-users/zsh-completions path:src kind:fpath
 belak/zsh-utils path:completion
 
-marlonrichert/zsh-autocomplete
-
 hlissner/zsh-autopair kind:defer
 
 zsh-users/zsh-autosuggestions kind:defer
-zsh-users/zsh-history-substring-search
+zsh-users/zsh-history-substring-search kind:defer

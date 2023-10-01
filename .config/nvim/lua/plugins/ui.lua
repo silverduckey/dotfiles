@@ -30,6 +30,7 @@ return {
         event = "VimEnter",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
+            "arkav/lualine-lsp-progress"
         },
         config = function()
             local function source()
@@ -65,40 +66,10 @@ return {
                             "filename",
                             path = 3,
                         },
+                        "lsp_progress",
                     },
                 },
                 extensions = { "lazy", "nvim-dap-ui", "toggleterm" },
-            })
-        end,
-    },
-
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
-        },
-        config = function()
-            require("noice").setup({
-                messages = {
-                    view_history = "notify",
-                    view_search = false,
-                },
-                commands = {
-                    history = {
-                        view = "popup",
-                    },
-                },
-                presets = {
-                    command_palette = true,
-                    long_message_to_split = true,
-                },
-            })
-
-            require("notify").setup({
-                stages = "slide",
-                timeout = 500,
             })
         end,
     },
