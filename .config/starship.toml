@@ -1,3 +1,5 @@
+right_format = """$time$os"""
+
 [aws]
 symbol = "  "
 
@@ -7,15 +9,9 @@ symbol = " "
 [c]
 symbol = " "
 
-[character]
-success_symbol = "[➜](green)"
-error_symbol = "[➜](red)"
-
 [cmd_duration]
-min_time = 1
 show_milliseconds = true
-disabled = false
-style = "bold red"
+show_notifications = true
 
 [conda]
 symbol = " "
@@ -24,14 +20,13 @@ symbol = " "
 symbol = " "
 
 [directory]
-format = 'at [$path](bold yellow) '
-read_only = "󰌾"
+read_only = " 󰌾"
 
 [docker_context]
-symbol = "󰡨 "
+symbol = " "
 
 [elixir]
-symbol = " "
+symbol = " "
 
 [elm]
 symbol = " "
@@ -49,23 +44,20 @@ symbol = " "
 symbol = " "
 
 [haskell]
-symbol = " "
+symbol = " "
 
 [haxe]
-symbol = "⌘ "
+symbol = " "
 
 [hg_branch]
 symbol = " "
 
 [hostname]
 ssh_only = false
-format = 'on [$hostname](bold blue) '
-trim_at = "."
-disabled = false
 ssh_symbol = " "
 
 [java]
-symbol = " "
+symbol = " "
 
 [julia]
 symbol = " "
@@ -80,7 +72,7 @@ symbol = "󰍛 "
 symbol = "󰔷 "
 
 [nim]
-symbol = " "
+symbol = "󰆥 "
 
 [nix_shell]
 symbol = " "
@@ -88,15 +80,59 @@ symbol = " "
 [nodejs]
 symbol = " "
 
-[package]
-symbol = "󰏗 "
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[os]
+format = "on [$symbol ]($style)"
 disabled = false
 
+[package]
+symbol = "󰏗 "
+
 [pijul_channel]
-symbol = "🪺 "
+symbol = " "
 
 [python]
-symbol = " "
+symbol = " "
 
 [rlang]
 symbol = "󰟔 "
@@ -110,12 +146,8 @@ symbol = " "
 [scala]
 symbol = " "
 
-[spack]
-symbol = "🅢 "
+[time]
+disabled = false
 
 [username]
-style_user = "bold green"
-style_root = "bold red"
-format = "[$user]($style) "
-disabled = false
 show_always = true
