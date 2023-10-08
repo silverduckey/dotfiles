@@ -1,0 +1,4 @@
+runtime autoload/plug.vim
+runtime autoload/opt.vim
+
+runtime plugin/plugin.vim
