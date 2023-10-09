@@ -38,7 +38,7 @@ filextype {*.xhtml,*.html,*.htm},<text/html>
 
 filetype {*.o},<application/x-object> nm %f | bat -p
 
-fileviewer *,.* bat -p %c 
+fileviewer <text/*> bat -p %c 
 
 filextype {*.svg,*.svgz},<image/svg+xml>
         \ {Edit in Inkscape}
