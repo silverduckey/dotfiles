@@ -14,7 +14,7 @@ return {
 
             startify.section.top_buttons.val = {
                 startify.button("n", "  New file", "<CMD>ene <BAR> startinsert <CR>"),
-                startify.button(".", "  File explorer", "<CMD>Lf<CR>"),
+                startify.button(".", "  File explorer", "<CMD>VifmCR>"),
             }
 
             startify.section.bottom_buttons.val = {

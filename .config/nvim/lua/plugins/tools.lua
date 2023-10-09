@@ -49,24 +49,9 @@ return {
     },
 
     {
-        "lmburns/lf.nvim",
-        dependencies = {
-            "akinsho/toggleterm.nvim",
-        },
+        "vifm/vifm.vim",
         config = function()
-            g.lf_netrw = 1
-            require("lf").setup({
-                winblend = 0,
-                border = "rounded",
-                height = fn.float2nr(fn.round(0.9 * o.lines)),
-                width = fn.float2nr(fn.round(0.9 * o.columns)),
-                escape_quit = false,
-                highlights = {
-                    NormalFloat = { link = "guibg" },
-                },
-            })
-
-            keymap.set("n", "<leader>.", "<cmd>Lf<cr>", { desc = "Launch Lf" })
+            keymap.set("n", "<leader>.", "<CMD>Vifm<CR>", { desc = "Launch Vifm" })
         end,
     },
 
