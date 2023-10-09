@@ -1,6 +1,6 @@
 #!/bin/sh
 
-res="$(fd -H . | fzf --ansi --header='Find files' --preview 'bat -p {}')"
+res="$(fd -H . | fzf --ansi --header='Find files' --preview 'pistol {}')"
 if [ -n "$res" ]; then
     if [ -d "$res" ]; then
         cd "$res"
