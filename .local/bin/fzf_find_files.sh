@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-res="$(fd -H . | fzf --ansi --reverse --header='Find files' --preview 'pistol {}')"
+res="$(fd -H . | fzf --ansi --header='Find files' --preview 'bat -p {}')"
 if [[ -n "$res" ]]; then
     if [[ -d "$res" ]]; then
         cd "$res"
