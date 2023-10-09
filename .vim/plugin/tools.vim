@@ -1,6 +1,4 @@
-let g:lf_map_keys = 0
-let g:lf_replace_netrw = 1
-nnoremap <leader>. <cmd>Lf<cr>
+nnoremap <leader>. <cmd>Vifm<cr>
 
 let g:floaterm_title=""
 let g:floaterm_width=0.9

@@ -1,0 +1,4 @@
+source $VIFM/opt.vifm
+source $VIFM/plugins.vifm
+source $VIFM/map.vifm
+source $VIFM/filetypes.vifm

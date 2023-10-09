@@ -1,0 +1,36 @@
+set timeoutlen=300
+
+set nu
+set relativenumber
+
+set tabstop=4
+
+set nowrap
+
+set nohlsearch
+set incsearch
+
+set scrolloff=8
+
+set wildmenu
+
+set smartcase
+
+set mouse=a
+
+set vicmd=nvim
+
+set wildmenu
+set wildstyle=popup
+
+only
+set millerview
+set milleroptions="lsize:1,csize:2,rsize:4,rpreview:all"
+
+set dotfiles
+
+set syscalls
+
+set suggestoptions=normal,visual,view,keys,foldsubkeys,marks,registers
+
+set vimhelp
