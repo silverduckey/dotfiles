@@ -1,7 +1,7 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 export TERM="xterm-256color"
-export PAGER="bat -p"
+export PAGER="less"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export PATH="$HOME/.local/bin:$PATH"
