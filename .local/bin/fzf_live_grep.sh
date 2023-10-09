@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env dash
 
 RG_PREFIX="rg --hidden --column --line-number --no-heading --color=always --smart-case "
 res="$(

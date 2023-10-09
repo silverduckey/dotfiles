@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env dash
 
 res="$(fd -H --ignore-file .gitignore . | fzf --ansi --header='Git files' --preview 'bat -p {}')"
 if [[ -n "$res" ]]; then

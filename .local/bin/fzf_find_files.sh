@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env dash
 
 res="$(fd -H . | fzf --ansi --header='Find files' --preview 'bat -p {}')"
 if [[ -n "$res" ]]; then
