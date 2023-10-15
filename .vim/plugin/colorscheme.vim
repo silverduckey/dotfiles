@@ -1,1 +1,1 @@
-colorscheme rosepine
+colorscheme catppuccin_mocha
