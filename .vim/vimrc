@@ -11,7 +11,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 
 call plug#begin()
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'vifm/vifm.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'junegunn/fzf'
