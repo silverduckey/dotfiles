@@ -9,6 +9,10 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTFILE="$XDG_CACHE_HOME/zsh/history"
+
 alias ls="exa -ah"
 alias ll="exa -alh"
 alias fd="fd -H"
@@ -26,6 +30,11 @@ alias gs="lazygit"
 alias wf=". fzf_find_files.sh"
 alias wg=". fzf_live_grep.sh"
 alias gf=". fzf_git_files.sh"
+
+autoload -U compinit
+zstyle ':completion:*' menu select
+compinit
+_comp_options+=(globdots)
 
 setopt beep extendedglob nomatch notify
 
