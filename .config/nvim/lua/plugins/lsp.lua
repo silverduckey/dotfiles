@@ -53,6 +53,7 @@ return {
                 keymap.set("n", "<space>rn", lsp.buf.rename, { desc = "Rename" })
                 keymap.set({ "n", "v" }, "<space>ca", lsp.buf.code_action, { desc = "Code action" })
                 keymap.set("n", "gr", lsp.buf.references, { desc = "References" })
+                keymap.set("n", "<space>f", lsp.buf.format, { desc = "Format" })
             end
 
             keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Diagnostic" })
@@ -153,48 +154,23 @@ return {
     },
 
     {
-        "rshkarin/mason-nvim-lint",
+        "jay-babu/mason-null-ls.nvim",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "williamboman/mason.nvim",
-            "mfussenegger/nvim-lint",
+            "nvimtools/none-ls.nvim",
         },
         config = function()
-            require("mason-nvim-lint").setup({
+            require("mason-null-ls").setup({
                 ensure_installed = {
+                    "shfmt",
                     "selene",
                     "revive",
                     "shellcheck",
                     "vint",
-                }
+                },
+                handlers = {},
             })
         end,
-    },
-
-    {
-        "mhartington/formatter.nvim",
-        event = { "BufReadPre", "BufNewFile" },
-        keys = {
-            { "<leader>f", "<cmd>Format<cr>", desc = "Format" },
-        },
-        config = function()
-            require("formatter").setup({
-                filetype = {
-                    sh = {
-                        require("formatter.filetypes.sh").shfmt,
-                    },
-                    ["*"] = {
-                        require("formatter.filetypes.any").remove_trailing_whitespace,
-                        function()
-                            local defined_types = require("formatter.config").values.filetype
-                            if defined_types[vim.bo.filetype] ~= nil then
-                                return nil
-                            end
-                            lsp.buf.format({ async = true })
-                        end,
-                    },
-                },
-            })
-        end
     }
 }
