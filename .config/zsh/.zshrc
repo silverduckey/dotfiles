@@ -52,6 +52,19 @@ source $zsh_plugins
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
     $HOME/.fzf/install --all
 
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
+
+bindkey "^G" autosuggest-accept
+
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+bindkey -M vicmd "k" history-substring-search-up
+bindkey -M vicmd "j" history-substring-search-down
+
 eval "$(zoxide init zsh --cmd cd)"
 
 eval "$(thefuck --alias f)"
