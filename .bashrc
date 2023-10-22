@@ -36,17 +36,9 @@ shopt -s extglob
 
 set -o vi
 
-[[ ! -d $XDG_DATA_HOME/blesh ]] &&
-    git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git &&
-    cd ble.sh &&
-    make &&
-    make install
-
-[[ ! -d $HOME/.fzf ]] &&
+[ ! -d $HOME/.fzf ] &&
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
     $HOME/.fzf/install --all
-
-source $XDG_DATA_HOME/blesh/ble.sh
 
 eval "$(zoxide init bash --cmd cd)"
 

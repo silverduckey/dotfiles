@@ -1,17 +1,20 @@
-export EDITOR="nvim"
-export VISUAL="nvim"
-export TERM="xterm-256color"
-export PAGER="less"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+zstyle ':completion:*' completer _expand _complete _ignored _correct
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
+zstyle ':completion:*' menu select=long-list select=0
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' verbose true
 
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+autoload -Uz compinit
+compinit
 
-HISTFILE=$XDG_CACHE_HOME/zsh/history
-HISTSIZE=1000000
-SAVEHIST=1000000
+HISTFILE=$XDG_DATA_HOME/zsh/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt extendedglob notify
+unsetopt beep
+bindkey -v
 
 alias ls="exa -ah"
 alias ll="exa -alh"
@@ -31,43 +34,23 @@ alias wf=". fzf_find_files.sh"
 alias wg=". fzf_live_grep.sh"
 alias gf=". fzf_git_files.sh"
 
-zstyle ':completion:*' completer _expand _complete _ignored _approximate
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/home/vu/.config/zsh/.zshrc'
-
-autoload -Uz compinit
-compinit
-
-setopt extendedglob notify
-unsetopt beep
-bindkey -v
-export KEYTIMEOUT=1
-
-[[ ! -d $ZDOTDIR/.antidote ]] &&
+[ ! -d $ZDOTDIR/.antidote ] &&
     git clone --depth=1 https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
 
-source $ZDOTDIR/.antidote/antidote.zsh
-antidote load
+zsh_plugins=$ZDOTDIR/.zsh_plugins.zsh
 
-[[ ! -d $HOME/.fzf ]] &&
+fpath+=($ZDOTDIR/.antidote)
+autoload -Uz $fpath[-1]/antidote
+
+if [ ! $zsh_plugins -nt $zsh_plugins:r.txt ]; then
+    (antidote bundle <$zsh_plugins:r.txt >|$zsh_plugins)
+fi
+
+source $zsh_plugins
+
+[ ! -d $HOME/.fzf ] &&
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
     $HOME/.fzf/install --all
-
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
-ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
-ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
-
-bindkey "^G" autosuggest-accept
-
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
-bindkey -M vicmd "k" history-substring-search-up
-bindkey -M vicmd "j" history-substring-search-down
 
 eval "$(zoxide init zsh --cmd cd)"
 
