@@ -5,6 +5,7 @@ api                = vim.api
 fn                 = vim.fn
 lsp                = vim.lsp
 keymap             = vim.keymap
+snippet            = vim.snippet
 
 g.mapleader        = " "
 g.maplocalleader   = " "
