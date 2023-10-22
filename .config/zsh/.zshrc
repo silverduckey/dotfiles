@@ -2,7 +2,7 @@ zstyle ':completion:*' completer _expand _complete _ignored _correct _approximat
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' matcher-list 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
-zstyle ':completion:*' menu select=long-list
+zstyle ':completion:*' menu select=0
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 
 autoload -Uz compinit
