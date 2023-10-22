@@ -187,6 +187,14 @@ return {
     },
 
     {
+        "lewis6991/spaceless.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            require("spaceless").setup()
+        end,
+    },
+
+    {
         "lukas-reineke/headlines.nvim",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
