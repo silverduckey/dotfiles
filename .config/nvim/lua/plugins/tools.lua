@@ -8,7 +8,6 @@ return {
             { "<leader>wb", "<CMD>Telescope buffers<CR>",     desc = "Telescope buffers" },
             { "<leader>wg", "<CMD>Telescope live_grep<CR>",   desc = "Telescope live grep" },
             { "<leader>h",  "<CMD>Telescope help_tags<CR>",   desc = "Telescope help tags" },
-            { "<leader>o",  "<CMD>Telescope oldfiles<CR>",    desc = "Telescope oldfiles" },
             { "<leader>cd", "<CMD>Telescope zoxide list<CR>", desc = "Telescope zoxide list" },
         },
         dependencies = {

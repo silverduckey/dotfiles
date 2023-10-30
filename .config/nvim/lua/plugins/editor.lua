@@ -1,5 +1,21 @@
 return {
     {
+        "nvim-orgmode/orgmode",
+        dependencies = {
+            { "nvim-treesitter/nvim-treesitter", lazy = true },
+        },
+        event = "VeryLazy",
+        config = function()
+            require("orgmode").setup_ts_grammar()
+
+            require("orgmode").setup({
+                org_agenda_files = "$HOME/Agenda/**/*",
+                org_default_notes_file = "$HOME/Notes/notes.org",
+            })
+        end,
+    },
+
+    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         event = { "BufReadPre", "BufNewFile" },
@@ -28,6 +44,7 @@ return {
                 auto_install = true,
                 highlight = {
                     enable = true,
+                    additional_vim_regex_highlighting = { "org" },
                 },
             })
 
@@ -124,6 +141,7 @@ return {
                     { name = "nvim_lsp" },
                     { name = "nvim_lsp_signature_help" },
                     { name = "luasnip" },
+                    { name = "orgmode" },
                 }, {
                     { name = "buffer" },
                     { name = "path" },
