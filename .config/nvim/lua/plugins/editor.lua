@@ -2,16 +2,20 @@ return {
     {
         "nvim-orgmode/orgmode",
         dependencies = {
-            { "nvim-treesitter/nvim-treesitter", lazy = true },
+            {
+                "nvim-treesitter/nvim-treesitter",
+                "akinsho/org-bullets.nvim",
+            },
         },
         event = "VeryLazy",
         config = function()
             require("orgmode").setup_ts_grammar()
-
             require("orgmode").setup({
-                org_agenda_files = "$HOME/Agenda/**/*",
-                org_default_notes_file = "$HOME/Notes/notes.org",
+                org_agenda_files = "Agenda/**/*",
+                org_default_notes_file = "Notes/notes.org",
             })
+
+            require("org-bullets").setup()
         end,
     },
 
