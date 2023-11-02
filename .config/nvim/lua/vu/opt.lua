@@ -45,5 +45,3 @@ opt.updatetime = 50
 opt.colorcolumn = "80"
 
 opt.showmode = false
-
-o.guifont = "Mononoki Nerd Font:h11"
