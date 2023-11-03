@@ -3,16 +3,16 @@ scrolling:
 
 font:
   normal:
-    family: Mononoki Nerd Font
+    family: FiraCode Nerd Font
     style: Regular
   bold:
-    family: Mononoki Nerd Font
+    family: FiraCode Nerd Font
     style: Bold
   italic:
-    family: Mononoki Nerd Font
+    family: FiraCode Nerd Font
     style: Italic
   bold_italic:
-    family: Mononoki Nerd Font
+    family: FiraCode Nerd Font
     style: Bold Italic
   size: 11.0
   builtin_box_drawing: true
@@ -23,14 +23,14 @@ colors:
         foreground: "#CDD6F4"
         dim_foreground: "#CDD6F4"
         bright_foreground: "#CDD6F4"
-   
+
     cursor:
         text: "#1E1E2E"
         cursor: "#F5E0DC"
     vi_mode_cursor:
         text: "#1E1E2E"
         cursor: "#B4BEFE"
-   
+
     search:
         matches:
             foreground: "#1E1E2E"
@@ -41,7 +41,7 @@ colors:
         footer_bar:
             foreground: "#1E1E2E"
             background: "#A6ADC8"
-   
+
     hints:
         start:
             foreground: "#1E1E2E"
@@ -49,11 +49,11 @@ colors:
         end:
             foreground: "#1E1E2E"
             background: "#A6ADC8"
-   
+
     selection:
         text: "#1E1E2E"
         background: "#F5E0DC"
-   
+
     normal:
         black: "#45475A"
         red: "#F38BA8"
@@ -63,7 +63,7 @@ colors:
         magenta: "#F5C2E7"
         cyan: "#94E2D5"
         white: "#BAC2DE"
-   
+
     bright:
         black: "#585B70"
         red: "#F38BA8"
@@ -73,7 +73,7 @@ colors:
         magenta: "#F5C2E7"
         cyan: "#94E2D5"
         white: "#A6ADC8"
-   
+
     dim:
         black: "#45475A"
         red: "#F38BA8"
