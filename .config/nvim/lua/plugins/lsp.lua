@@ -4,10 +4,6 @@ return {
         build = ":MasonInstallAll",
         event = "VeryLazy",
         config = function()
-            local ensure_installed = {
-                "shfmt",
-            }
-
             require("mason").setup({
                 ui = {
                     icons = {
@@ -17,10 +13,6 @@ return {
                     },
                 },
             })
-
-            api.nvim_create_user_command("MasonInstallAll", function()
-                vim.cmd("MasonInstall " .. table.concat(ensure_installed, " "))
-            end, {})
         end
     },
 
