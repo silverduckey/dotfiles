@@ -76,22 +76,13 @@ return {
             local mark = require("harpoon.mark")
             local ui = require("harpoon.ui")
 
-            require("harpoon").setup({
-                tabline = true,
-            })
+            keymap.set("n", "<leader>mt", mark.toggle_file, { desc = "Toggle harpoon mark" })
+            keymap.set("n", "<leader>mm", ui.toggle_quick_menu)
 
-            api.nvim_set_hl(0, "HarpoonNumberInactive", { link = "TabLine" })
-            api.nvim_set_hl(0, "HarpoonNumberActive", { link = "TabLineSel" })
-            api.nvim_set_hl(0, "HarpoonActive", { link = "TabLineSel" })
-            api.nvim_set_hl(0, "HarpoonInactive", { link = "TabLine" })
-
-            keymap.set("n", "<leader>a", mark.toggle_file, { desc = "Toggle harpoon mark" })
-            keymap.set("n", "<C-e>", ui.toggle_quick_menu)
-
-            keymap.set("n", "<C-h>", function() ui.nav_file(1) end, { desc = "Go to the 1st file in harpoon list" })
-            keymap.set("n", "<C-j>", function() ui.nav_file(2) end, { desc = "Go to the 2nd file in harpoon list" })
-            keymap.set("n", "<C-k>", function() ui.nav_file(3) end, { desc = "Go to the 3rd file in harpoon list" })
-            keymap.set("n", "<C-l>", function() ui.nav_file(4) end, { desc = "Go to the 4th file in harpoon list" })
+            keymap.set("n", "<leader>mh", function() ui.nav_file(1) end, { desc = "Go to the 1st file in harpoon list" })
+            keymap.set("n", "<leader>mj", function() ui.nav_file(2) end, { desc = "Go to the 2nd file in harpoon list" })
+            keymap.set("n", "<leader>mk", function() ui.nav_file(3) end, { desc = "Go to the 3rd file in harpoon list" })
+            keymap.set("n", "<leader>ml", function() ui.nav_file(4) end, { desc = "Go to the 4th file in harpoon list" })
         end,
     },
 

@@ -7,12 +7,12 @@ keymap.set({ "n", "x" }, "<C-u>", "<C-u>zz")
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
-keymap.set("x", "<leader>p", [["_dp]])
+keymap.set("x", "<M-p>", [["_dp]])
 
 keymap.set({ "n", "x" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
 
-keymap.set({ "n", "x" }, "<leader>d", [["_d]])
+keymap.set({ "n", "x" }, "<M-d>", [["_d]])
 
 keymap.set("n", "Q", "<nop>")
 

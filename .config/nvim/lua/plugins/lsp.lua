@@ -122,18 +122,18 @@ return {
                 handlers = {},
             })
 
-            keymap.set("n", "<leader>sc", dap.continue, { desc = "Start/continue" })
-            keymap.set("n", "<leader>si", dap.step_into, { desc = "Step into" })
-            keymap.set("n", "<leader>so", dap.step_over, { desc = "Step over" })
-            keymap.set("n", "<leader>su", dap.step_out, { desc = "Step out" })
-            keymap.set("n", "<leader>sb", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
-            keymap.set("n", "<leader>sB", function()
+            keymap.set("n", "<leader>dc", dap.continue, { desc = "Start/continue" })
+            keymap.set("n", "<leader>di", dap.step_into, { desc = "Step into" })
+            keymap.set("n", "<leader>do", dap.step_over, { desc = "Step over" })
+            keymap.set("n", "<leader>du", dap.step_out, { desc = "Step out" })
+            keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
+            keymap.set("n", "<leader>dB", function()
                 dap.set_breakpoint(fn.input("Breakpoint condition: "))
             end, { desc = "Set breakpoint" })
 
             dapui.setup()
 
-            keymap.set("n", "<leader>st", dapui.toggle, { desc = "Toggle" })
+            keymap.set("n", "<leader>dt", dapui.toggle, { desc = "Toggle" })
 
             dap.listeners.after.event_initialized["dapui_config"] = dapui.open
             dap.listeners.before.event_terminated["dapui_config"] = dapui.close
