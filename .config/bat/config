@@ -1,4 +1,4 @@
 --italic-text=always
 --force-colorization
---theme="base16"
+--theme="Catppuccin-mocha"
 --style=full
