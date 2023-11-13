@@ -15,7 +15,6 @@ user_pref("geo.provider.use_geoclue", false);
 user_pref("intl.accept_languages", "en-US, en");
 user_pref("javascript.use_us_english_locale", true);
 
-user_pref("_user.js.parrot", "0300 syntax error: the parrot's not pinin' for the fjords!");
 user_pref("extensions.getAddons.showPane", false);
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 user_pref("browser.discovery.enabled", false);
@@ -65,7 +64,6 @@ user_pref("network.http.speculative-parallel-limit", 0);
 user_pref("browser.places.speculativeConnect.enabled", false);
 user_pref("browser.send_pings", false);
 
-user_pref("_user.js.parrot", "0700 syntax error: the parrot's given up the ghost!");
 user_pref("network.proxy.socks_remote_dns", true);
 user_pref("network.file.disable_unc_paths", true);
 user_pref("network.gio.supported-protocols", "");
@@ -120,7 +118,6 @@ user_pref("privacy.userContext.ui.enabled", true);
 user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 user_pref("media.peerconnection.ice.default_address_only", true);
 
-user_pref("_user.js.parrot", "2400 syntax error: the parrot's kicked the bucket!");
 user_pref("dom.disable_window_move_resize", true);
 
 user_pref("browser.download.start_downloads_in_tmp_dir", true);
