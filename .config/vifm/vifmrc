@@ -55,7 +55,7 @@ filextype {*.djvu},<image/vnd.djvu>
 
 filetype {*.mid,*.kar}
        \ {Play using mpv}
-       \ timidity %f,
+       \ mpv %f,
 
 filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,*.aac,*.mpga},<audio/*>
        \ {Play using mpv}
@@ -67,7 +67,7 @@ fileviewer {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,*.
 
 filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,*.as[fx],*.unknown_video},<video/*>
         \ {Play using mpv}
-        \ mpv --no-video %f,
+        \ mpv %f,
 fileviewer {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,*.as[fx],*.unknown_video},<video/*>
          \ #ueberzug#video %px %py %pw %ph
          \ %pc
