@@ -137,6 +137,7 @@ user_pref("browser.download.alwaysOpenPanel", false);
 user_pref("browser.download.manager.addToRecentDocs", false);
 user_pref("browser.download.always_ask_before_handling_new_types", true);
 
+user_pref("extensions.pocket.enabled", false);
 user_pref("extensions.enabledScopes", 5);
 user_pref("extensions.autoDisableScopes", 15);
 user_pref("extensions.postDownloadThirdPartyPrompt", false);
