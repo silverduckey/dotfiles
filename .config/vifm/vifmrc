@@ -54,8 +54,8 @@ filextype {*.djvu},<image/vnd.djvu>
         \ zathura %f,
 
 filetype {*.mid,*.kar}
-       \ {Play using mpv}
-       \ mpv %f,
+       \ {Play using TiMidity++}
+       \ timidity %f,
 
 filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,*.aac,*.mpga},<audio/*>
        \ {Play using mpv}
