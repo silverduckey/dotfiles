@@ -69,7 +69,7 @@ return {
                         "lsp_progress",
                     },
                 },
-                extensions = { "lazy", "nvim-dap-ui", "toggleterm" },
+                extensions = { "lazy", "nvim-dap-ui" },
             })
         end,
     },

@@ -29,7 +29,7 @@ return {
 
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local on_attach = function(client)
+            local on_attach = function()
                 keymap.set("n", "gD", lsp.buf.declaration, { desc = "Go to declaration" })
                 keymap.set("n", "gd", lsp.buf.definition, { desc = "Go to definition" })
                 keymap.set("n", "K", lsp.buf.hover, { desc = "Hover" })
@@ -83,11 +83,6 @@ return {
             })
 
             lspconfig.bashls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig.vale_ls.setup({
                 capabilities = capabilities,
                 on_attach = on_attach,
             })
