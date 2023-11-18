@@ -1,0 +1,20 @@
+#!/bin/sh
+
+case $1 in
+up)
+	pw-volume change +5%
+	notify-send -u normal "Volume changed" "Volume up by 5%"
+	;;
+down)
+	pw-volume change -5%
+	notify-send -u normal "Volume changed" "Volume down by 5%"
+	;;
+mute)
+	pw-volume mute on
+	notify-send -u normal "Volume changed" "Volume muted"
+	;;
+unmute)
+	pw-volume mute off
+	notify-send -u normal "Volume changed" "Volume unmuted"
+	;;
+esac

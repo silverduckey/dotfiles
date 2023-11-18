@@ -29,9 +29,9 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 alias gs="lazygit"
-alias wf=". fzf_find_files.sh"
-alias wg=". fzf_live_grep.sh"
-alias gf=". fzf_git_files.sh"
+alias wf=". fzf_find_files"
+alias wg=". fzf_live_grep"
+alias gf=". fzf_git_files"
 
 [ ! -d $ZDOTDIR/.antidote ] &&
     git clone --depth=1 https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
