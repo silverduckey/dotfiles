@@ -70,7 +70,7 @@ return {
 
     {
         "ThePrimeagen/harpoon",
-        event = "VimEnter",
+        event = "VeryLazy",
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
