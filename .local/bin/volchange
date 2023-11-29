@@ -4,17 +4,21 @@ case $1 in
 up)
 	pw-volume change +5%
 	notify-send -u normal "Volume changed" "Volume up by 5%"
+    pw-volume status
 	;;
 down)
 	pw-volume change -5%
 	notify-send -u normal "Volume changed" "Volume down by 5%"
+    pw-volume status
 	;;
 mute)
 	pw-volume mute on
 	notify-send -u normal "Volume changed" "Volume muted"
+    pw-volume status
 	;;
 unmute)
 	pw-volume mute off
 	notify-send -u normal "Volume changed" "Volume unmuted"
+    pw-volume status
 	;;
 esac
