@@ -101,6 +101,7 @@ These are my Vimmatic settings:
             "colorscheme": "system"
         },
         "blacklist": [
+            "search.demoniak.ch/*"
         ],
         "styles": {
             "hint": {
