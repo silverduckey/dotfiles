@@ -8,7 +8,7 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 autoload -Uz compinit
 compinit
 
-HISTFILE=$XDG_DATA_HOME/zsh/.zsh_history
+HISTFILE=$XDG_DATA_HOME/zsh/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
 setopt extendedglob notify
