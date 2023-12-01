@@ -33,6 +33,8 @@ alias wf=". fzf_find_files"
 alias wg=". fzf_live_grep"
 alias gf=". fzf_git_files"
 
+. $ZDOTDIR/catppuccin_mocha-zsh-syntax-highlighting.zsh
+
 [ ! -d $ZDOTDIR/.antidote ] &&
     git clone --depth=1 https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
 
