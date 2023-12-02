@@ -101,16 +101,6 @@ return {
                     })
                 end,
             },
-            {
-                "Exafunction/codeium.nvim",
-                dependencies = {
-                    "nvim-lua/plenary.nvim",
-                    "hrsh7th/nvim-cmp",
-                },
-                config = function()
-                    require("codeium").setup()
-                end
-            },
         },
         config = function()
             local luasnip = require("luasnip")
@@ -156,7 +146,6 @@ return {
                     { name = "nvim_lsp_signature_help" },
                     { name = "luasnip" },
                     { name = "orgmode" },
-                    { name = "codeium" },
                 }, {
                     { name = "buffer" },
                     { name = "path" },
@@ -186,6 +175,14 @@ return {
                     { name = "cmdline" },
                 }),
             })
+        end,
+    },
+
+    {
+        "Exafunction/codeium.vim",
+        event = "InsertEnter",
+        config = function()
+            keymap.set("i", "<C-g>", function() return fn["codeium#Accept"]() end, { expr = true })
         end,
     },
 
