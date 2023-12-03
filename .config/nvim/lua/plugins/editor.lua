@@ -180,7 +180,7 @@ return {
 
     {
         "Exafunction/codeium.vim",
-        event = "InsertEnter",
+        event = { "BufReadPre", "BufNewFile" },
         config = function()
             keymap.set("i", "<C-g>", function() return fn["codeium#Accept"]() end, { expr = true })
         end,
