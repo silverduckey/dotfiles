@@ -5,6 +5,7 @@ return {
             {
                 "nvim-treesitter/nvim-treesitter",
                 "akinsho/org-bullets.nvim",
+                "dhruvasagar/vim-table-mode",
             },
         },
         event = "VeryLazy",
