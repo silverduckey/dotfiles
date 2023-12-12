@@ -1,3 +1,5 @@
+romkatv/powerlevel10k
+
 romkatv/zsh-bench kind:path
 
 jeffreytse/zsh-vi-mode
