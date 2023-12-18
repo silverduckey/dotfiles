@@ -74,15 +74,13 @@
     "https://proxigram.privacyfrontends.repl.co"
   ],
   "reddit": {
-    "enabled": true,
-    "frontend": "libreddit",
+    "enabled": false,
+    "frontend": "teddit",
     "unsupportedUrls": "bypass",
     "instance": "public",
     "redirectType": "main_frame"
   },
-  "libreddit": [
-    "https://safereddit.com"
-  ],
+  "libreddit": [],
   "teddit": [
     "https://teddit.net"
   ],
@@ -166,7 +164,7 @@
     "https://binternet.ahwx.org"
   ],
   "search": {
-    "enabled": true,
+    "enabled": false,
     "frontend": "searxng",
     "unsupportedUrls": "bypass",
     "instance": "public",
@@ -280,13 +278,13 @@
     "https://wayback-classic.net"
   ],
   "github": {
-    "enabled": true,
+    "enabled": false,
     "unsupportedUrls": "bypass",
     "frontend": "gothub",
     "redirectType": "main_frame"
   },
   "gothub": [
-    "https://gh.bloatcat.tk"
+    "https://g.opnxng.com"
   ],
   "bilibili": {
     "enabled": true,
@@ -307,7 +305,7 @@
     "https://tent.sny.sh"
   ],
   "gitlab": {
-    "enabled": true,
+    "enabled": false,
     "unsupportedUrls": "bypass",
     "frontend": "laboratory",
     "redirectType": "main_frame"
@@ -344,7 +342,6 @@
     "twitter",
     "tiktok",
     "imgur",
-    "reddit",
     "quora",
     "translate",
     "maps",
@@ -364,12 +361,11 @@
     "wikipedia",
     "snopes",
     "waybackMachine",
-    "github",
     "bilibili",
     "bandcamp",
-    "gitlab",
     "instructables",
-    "wolframAlpha"
+    "wolframAlpha",
+    "reuters"
   ],
   "fetchInstances": "github",
   "facil": [
