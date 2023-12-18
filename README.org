@@ -118,3 +118,5 @@ These are my Vimmatic settings:
         }
 }
 #+end_src
+
+I also included my libredirect settings. You can import theme into your browser if you want.
