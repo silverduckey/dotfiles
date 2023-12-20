@@ -1,0 +1,12 @@
+{
+    "colorcolumn": 80,
+    "colorscheme": "catppuccin-mocha",
+    "fzfarg": "--ansi --header='Find files' --preview 'pistol {}'",
+    "lsp.server": "c=clangd,go=gopls,rust=rust-analyzer",
+    "pluginrepos": [
+        "https://raw.githubusercontent.com/MuratovAS/micro-fzfinder/main/repo.json"
+    ],
+    "relativeruler": true,
+    "saveundo": true,
+    "tabstospaces": true
+}
