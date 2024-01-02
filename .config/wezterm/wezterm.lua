@@ -4,6 +4,7 @@ local wezterm = {
         "FiraCode Nerd Font Mono",
         "Noto Color Emoji",
     }),
+    font_size = 11,
     enable_tab_bar = false,
 }
 return wezterm
