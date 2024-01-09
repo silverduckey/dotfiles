@@ -36,17 +36,8 @@ alias gf=". fzf_git_files"
 
 [ ! -d $ZDOTDIR/.antidote ] &&
     git clone --depth=1 https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
-
-zsh_plugins=$ZDOTDIR/.zsh_plugins.zsh
-
-fpath+=($ZDOTDIR/.antidote)
-autoload -Uz $fpath[-1]/antidote
-
-if [ ! $zsh_plugins -nt $zsh_plugins:r.txt ]; then
-    (antidote bundle <$zsh_plugins:r.txt >|$zsh_plugins)
-fi
-
-source $zsh_plugins
+    source $ZDOTDIR/.antidote/antidote.zsh
+    antidote load
 
 [ ! -d $HOME/.fzf ] &&
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
