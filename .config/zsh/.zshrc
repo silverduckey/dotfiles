@@ -53,6 +53,8 @@ ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 
+fast-theme -q XDG:catppuccin-mocha
+
 bindkey "^G" autosuggest-accept
 
 bindkey "^[[A" history-substring-search-up

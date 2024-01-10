@@ -4,7 +4,7 @@ romkatv/zsh-bench kind:path
 
 jeffreytse/zsh-vi-mode
 
-zdharma-continuum/fast-syntax-highlighting kind:defer
+zdharma-continuum/fast-syntax-highlighting
 
 zsh-users/zsh-completions path:src kind:fpath
 
