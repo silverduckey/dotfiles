@@ -1,9 +1,9 @@
-zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
-zstyle ':completion:*' menu select=0
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ":completion:*" completer _expand _complete _ignored _correct _approximate
+zstyle ":completion:*" list-colors ""
+zstyle ":completion:*" list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ":completion:*" matcher-list "r:|[._-]=** r:|=**" "l:|=* r:|=*"
+zstyle ":completion:*" menu select=0
+zstyle ":completion:*" select-prompt %SScrolling active: current selection at %p%s
 
 autoload -Uz compinit
 compinit
@@ -15,8 +15,6 @@ setopt extendedglob notify
 unsetopt beep
 bindkey -v
 
-alias ls="exa -ah"
-alias ll="exa -alh"
 alias fd="fd -H"
 alias rg="rg --hidden"
 alias cat="bat"
@@ -53,7 +51,12 @@ ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 
-fast-theme -q XDG:catppuccin-mocha
+fast-theme -q CONFIG:catppuccin-mocha
+
+_ZO_CMD_PREFIX="cd"
+_ZO_FZF_OPTS="--ansi"
+
+eza_params=("--all" "--icons")
 
 bindkey "^G" autosuggest-accept
 
@@ -61,8 +64,6 @@ bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
 bindkey -M vicmd "j" history-substring-search-down
-
-eval "$(zoxide init zsh --cmd cd)"
 
 eval "$(thefuck --alias f)"
 

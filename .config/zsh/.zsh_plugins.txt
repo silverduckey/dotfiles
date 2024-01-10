@@ -4,11 +4,14 @@ romkatv/zsh-bench kind:path
 
 jeffreytse/zsh-vi-mode
 
-zdharma-continuum/fast-syntax-highlighting
+z-shell/F-Sy-H
 
 zsh-users/zsh-completions path:src kind:fpath
 
 hlissner/zsh-autopair kind:defer
+
+z-shell/zsh-zoxide
+z-shell/zsh-eza
 
 zsh-users/zsh-autosuggestions kind:defer
 zsh-users/zsh-history-substring-search kind:defer
