@@ -30,20 +30,41 @@ alias wf=". fzf_find_files"
 alias wg=". fzf_live_grep"
 alias gf=". fzf_git_files"
 
-. $ZDOTDIR/catppuccin_mocha-zsh-syntax-highlighting.zsh
+if [ ! -f $ZDOTDIR/.zi/bin/zi.zsh ]; then
+    print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
+    command mkdir -p "$HOME/.config/zsh/.zi" && command chmod go-rwX "$ZDOTDIR/.zi"
+    command git clone -q --depth=1 --branch "main" https://github.com/z-shell/zi "$ZDOTDIR/.zi/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+source "$ZDOTDIR/.zi/bin/zi.zsh"
+autoload -Uz _zi
+(( ${+_comps} )) && _comps[zi]=_zi
+zicompinit
 
-[ ! -d $ZDOTDIR/.antidote ] &&
-    git clone --depth=1 https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
-    source $ZDOTDIR/.antidote/antidote.zsh
-    antidote load
+if [ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+zi light-mode for \
+    romkatv/powerlevel10k \
+    jeffreytse/zsh-vi-mode \
+    z-shell/zsh-eza \
+    z-shell/F-Sy-H
+
+zi wait lucid light-mode for \
+    z-shell/H-S-MW \
+    z-shell/zsh-zoxide \
+    hlissner/zsh-autopair \
+    zsh-users/zsh-completions \
+    zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-history-substring-search
 
 [ ! -d $HOME/.fzf ] &&
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
     $HOME/.fzf/install --all
 
-if [ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+[ ! -f ~/.config/zsh/.p10k.zsh ] || source ~/.config/zsh/.p10k.zsh
 
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
@@ -51,12 +72,12 @@ ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 
+eza_params=("--all" "--icons")
+
 fast-theme -q CONFIG:catppuccin-mocha
 
 _ZO_CMD_PREFIX="cd"
 _ZO_FZF_OPTS="--ansi"
-
-eza_params=("--all" "--icons")
 
 bindkey "^G" autosuggest-accept
 
@@ -67,4 +88,4 @@ bindkey -M vicmd "j" history-substring-search-down
 
 eval "$(thefuck --alias f)"
 
-[ ! -f ~/.config/zsh/.p10k.zsh ] || source ~/.config/zsh/.p10k.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
