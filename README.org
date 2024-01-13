@@ -3,9 +3,9 @@ If you have already installed fzf from the official fzf github repo then
 you can enable keybindings and completion with the following command
 
 #+begin_src
-[[ -d $HOME/.fzf ]] && rm -rf $HOME/.fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install --all
+[ -d $HOME/.fzf ] && rm -rf $HOME/.fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+$HOME/.fzf/install --all --xdg --no-bash
 #+end_src
 
 Use this url to restore my Searx settings:

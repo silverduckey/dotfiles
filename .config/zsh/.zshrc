@@ -46,15 +46,15 @@ if [ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]; 
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-zi light-mode for \
+zi depth"1" for \
     romkatv/powerlevel10k \
     jeffreytse/zsh-vi-mode \
-    z-shell/zsh-eza \
-    z-shell/F-Sy-H
+    z-shell/F-Sy-H \
+    z-shell/zsh-eza
 
-zi wait lucid light-mode for \
-    z-shell/H-S-MW \
+zi wait lucid for \
     z-shell/zsh-zoxide \
+    z-shell/H-S-MW \
     hlissner/zsh-autopair \
     zsh-users/zsh-completions \
     zsh-users/zsh-autosuggestions \
@@ -72,9 +72,9 @@ ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 
-eza_params=("--all" "--icons")
-
 fast-theme -q CONFIG:catppuccin-mocha
+
+eza_params=("--all" "--icons")
 
 _ZO_CMD_PREFIX="cd"
 _ZO_FZF_OPTS="--ansi"
@@ -87,5 +87,3 @@ bindkey -M vicmd "k" history-substring-search-up
 bindkey -M vicmd "j" history-substring-search-down
 
 eval "$(thefuck --alias f)"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
