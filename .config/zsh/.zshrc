@@ -5,9 +5,6 @@ zstyle ":completion:*" matcher-list "r:|[._-]=** r:|=**" "l:|=* r:|=*"
 zstyle ":completion:*" menu select=0
 zstyle ":completion:*" select-prompt %SScrolling active: current selection at %p%s
 
-autoload -Uz compinit
-compinit
-
 HISTFILE=$XDG_DATA_HOME/zsh/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
@@ -30,14 +27,18 @@ alias wf=". fzf_find_files"
 alias wg=". fzf_live_grep"
 alias gf=". fzf_git_files"
 
-if [ ! -f $ZDOTDIR/.zi/bin/zi.zsh ]; then
+typeset -A ZI
+ZI[HOME_DIR]=$XDG_DATA_HOME/zsh/.zi
+ZI[BIN_DIR]=$ZI[HOME_DIR]/bin
+ZPFX=$ZI[HOME_DIR]/polaris
+if [ ! -f $ZI[BIN_DIR]/zi.zsh ]; then
     print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
-    command mkdir -p "$HOME/.config/zsh/.zi" && command chmod go-rwX "$ZDOTDIR/.zi"
-    command git clone -q --depth=1 --branch "main" https://github.com/z-shell/zi "$ZDOTDIR/.zi/bin" && \
+    command mkdir -p $ZI[HOME_DIR] && command chmod go-rwX $ZI[HOME_DIR]
+    command git clone -q --depth=1 --branch "main" https://github.com/z-shell/zi $ZI[BIN_DIR] && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
-source "$ZDOTDIR/.zi/bin/zi.zsh"
+source $ZI[BIN_DIR]/zi.zsh
 autoload -Uz _zi
 (( ${+_comps} )) && _comps[zi]=_zi
 zicompinit
