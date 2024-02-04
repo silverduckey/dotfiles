@@ -1,12 +1,9 @@
-zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
-zstyle ':completion:*' menu select=0
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-
-autoload -Uz compinit
-compinit
+zstyle ":completion:*" completer _expand _complete _ignored _correct _approximate
+zstyle ":completion:*" list-colors ""
+zstyle ":completion:*" list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ":completion:*" matcher-list "r:|[._-]=** r:|=**" "l:|=* r:|=*"
+zstyle ":completion:*" menu select=0
+zstyle ":completion:*" select-prompt %SScrolling active: current selection at %p%s
 
 HISTFILE=$XDG_DATA_HOME/zsh/.histfile
 HISTSIZE=100000
@@ -15,8 +12,6 @@ setopt extendedglob notify
 unsetopt beep
 bindkey -v
 
-alias ls="exa -ah"
-alias ll="exa -alh"
 alias fd="fd -H"
 alias rg="rg --hidden"
 alias cat="bat"
@@ -32,35 +27,58 @@ alias wf=". fzf_find_files"
 alias wg=". fzf_live_grep"
 alias gf=". fzf_git_files"
 
-. $ZDOTDIR/catppuccin_mocha-zsh-syntax-highlighting.zsh
+typeset -A ZI
+ZI[HOME_DIR]=$XDG_DATA_HOME/zsh/.zi
+ZI[BIN_DIR]=$ZI[HOME_DIR]/bin
+ZPFX=$ZI[HOME_DIR]/polaris
+if [ ! -f $ZI[BIN_DIR]/zi.zsh ]; then
+    print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
+    command mkdir -p $ZI[HOME_DIR] && command chmod go-rwX $ZI[HOME_DIR]
+    command git clone -q --depth=1 --branch "main" https://github.com/z-shell/zi $ZI[BIN_DIR] && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+source $ZI[BIN_DIR]/zi.zsh
+autoload -Uz _zi
+(( ${+_comps} )) && _comps[zi]=_zi
+zicompinit
 
-[ ! -d $ZDOTDIR/.antidote ] &&
-    git clone --depth=1 https://github.com/mattmc3/antidote.git $ZDOTDIR/.antidote
-
-zsh_plugins=$ZDOTDIR/.zsh_plugins.zsh
-
-fpath+=($ZDOTDIR/.antidote)
-autoload -Uz $fpath[-1]/antidote
-
-if [ ! $zsh_plugins -nt $zsh_plugins:r.txt ]; then
-    (antidote bundle <$zsh_plugins:r.txt >|$zsh_plugins)
+if [ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source $zsh_plugins
+zi depth"1" for \
+    romkatv/powerlevel10k \
+    jeffreytse/zsh-vi-mode \
+    z-shell/F-Sy-H \
+    z-shell/zsh-eza
+
+zi wait lucid for \
+    z-shell/zsh-zoxide \
+    z-shell/H-S-MW \
+    hlissner/zsh-autopair \
+    zsh-users/zsh-completions \
+    zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-history-substring-search
 
 [ ! -d $HOME/.fzf ] &&
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
     $HOME/.fzf/install --all
 
-if [ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+[ ! -f ~/.config/zsh/.p10k.zsh ] || source ~/.config/zsh/.p10k.zsh
 
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
 ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
+
+fast-theme -q CONFIG:catppuccin-mocha
+
+eza_params=("--all" "--icons")
+
+_ZO_CMD_PREFIX="cd"
+_ZO_FZF_OPTS="--ansi"
 
 bindkey "^G" autosuggest-accept
 
@@ -69,8 +87,4 @@ bindkey "^[[B" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
 bindkey -M vicmd "j" history-substring-search-down
 
-eval "$(zoxide init zsh --cmd cd)"
-
 eval "$(thefuck --alias f)"
-
-[ ! -f ~/.config/zsh/.p10k.zsh ] || source ~/.config/zsh/.p10k.zsh
