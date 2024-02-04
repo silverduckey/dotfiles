@@ -34,7 +34,7 @@
     "https://tubo.migalmoreno.com"
   ],
   "twitter": {
-    "enabled": true,
+    "enabled": false,
     "redirectType": "both",
     "unsupportedUrls": "bypass",
     "frontend": "nitter",
@@ -71,7 +71,7 @@
     "redirectType": "main_frame"
   },
   "proxigram": [
-    "https://proxigram.privacyfrontends.repl.co"
+    "https://proxigram.lunar.icu"
   ],
   "reddit": {
     "enabled": false,
@@ -125,7 +125,7 @@
     "https://md.vern.cc"
   ],
   "quora": {
-    "enabled": true,
+    "enabled": false,
     "unsupportedUrls": "bypass",
     "frontend": "quetre",
     "instance": "public",
@@ -339,10 +339,8 @@
   "theme": "dark",
   "popupServices": [
     "youtube",
-    "twitter",
     "tiktok",
     "imgur",
-    "quora",
     "translate",
     "maps",
     "youtubeMusic",
