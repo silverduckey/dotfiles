@@ -85,7 +85,7 @@
     "https://teddit.net"
   ],
   "imgur": {
-    "enabled": true,
+    "enabled": false,
     "redirectType": "both",
     "unsupportedUrls": "bypass",
     "frontend": "rimgo",
@@ -340,7 +340,6 @@
   "popupServices": [
     "youtube",
     "tiktok",
-    "imgur",
     "translate",
     "maps",
     "youtubeMusic",
