@@ -3,14 +3,12 @@ return {
         "nvim-orgmode/orgmode",
         dependencies = {
             {
-                "nvim-treesitter/nvim-treesitter",
                 "akinsho/org-bullets.nvim",
                 "dhruvasagar/vim-table-mode",
             },
         },
         event = "VeryLazy",
         config = function()
-            require("orgmode").setup_ts_grammar()
             require("orgmode").setup({
                 org_agenda_files = "Agenda/**/*",
                 org_default_notes_file = "Notes/notes.org",
