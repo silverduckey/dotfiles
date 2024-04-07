@@ -33,16 +33,6 @@
   "tuboYoutube": [
     "https://tubo.migalmoreno.com"
   ],
-  "twitter": {
-    "enabled": false,
-    "redirectType": "both",
-    "unsupportedUrls": "bypass",
-    "frontend": "nitter",
-    "instance": "public"
-  },
-  "nitter": [
-    "https://nitter.net"
-  ],
   "twitch": {
     "enabled": true,
     "redirectType": "both",
@@ -175,7 +165,6 @@
   ],
   "searx": [],
   "whoogle": [],
-  "librex": [],
   "4get": [
     "https://4get.ca"
   ],
@@ -365,8 +354,63 @@
     "reuters"
   ],
   "fetchInstances": "github",
-  "facil": [
-    " https://facilmap.org "
+  "version": "2.8.2",
+  "viewtube": [
+    "https://viewtube.io"
   ],
-  "version": "2.8.1"
+  "invidiousMusic": [],
+  "bluesky": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "skyview"
+  },
+  "skyview": [
+    "https://skyview.social"
+  ],
+  "redlib": [
+    "https://safereddit.com"
+  ],
+  "tumblr": {
+    "enabled": false,
+    "redirectType": "main_frame",
+    "unsupportedUrls": "bypass",
+    "frontend": "priviblur",
+    "instance": "public"
+  },
+  "priviblur": [
+    "https://pb.bloat.cat"
+  ],
+  "twineo": [
+    "https://twineo.exozy.me"
+  ],
+  "tekstowo": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "tekstoLibre"
+  },
+  "tekstoLibre": [
+    "https://davilarek.github.io/TekstoLibre"
+  ],
+  "librey": [],
+  "mozhi": [
+    "https://mozhi.aryak.me"
+  ],
+  "meet": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "jitsi"
+  },
+  "jitsi": [],
+  "sendFiles": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "send"
+  },
+  "send": [],
+  "textStorage": {
+    "enabled": false,
+    "unsupportedUrls": "bypass",
+    "frontend": "privateBin"
+  },
+  "privateBin": []
 }
