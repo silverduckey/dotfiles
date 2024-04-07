@@ -100,7 +100,12 @@ return {
         dependencies = {
             "williamboman/mason.nvim",
             "mfussenegger/nvim-dap",
-            "rcarriga/nvim-dap-ui",
+            {
+                "rcarriga/nvim-dap-ui",
+                dependencies = {
+                    "nvim-neotest/nvim-nio",
+                },
+            },
             "folke/neodev.nvim",
         },
         config = function()
