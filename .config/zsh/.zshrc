@@ -12,6 +12,8 @@ setopt extendedglob notify
 unsetopt beep
 bindkey -v
 
+alias ls="eza -a --icons"
+alias ll="eza -alh --icons"
 alias fd="fd -H"
 alias rg="rg --hidden"
 alias cat="bat"
@@ -27,35 +29,24 @@ alias wf=". fzf_find_files"
 alias wg=". fzf_live_grep"
 alias gf=". fzf_git_files"
 
-typeset -A ZI
-ZI[HOME_DIR]=$XDG_DATA_HOME/zsh/.zi
-ZI[BIN_DIR]=$ZI[HOME_DIR]/bin
-ZPFX=$ZI[HOME_DIR]/polaris
-if [ ! -f $ZI[BIN_DIR]/zi.zsh ]; then
-    print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
-    command mkdir -p $ZI[HOME_DIR] && command chmod go-rwX $ZI[HOME_DIR]
-    command git clone -q --depth=1 --branch "main" https://github.com/z-shell/zi $ZI[BIN_DIR] && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-source $ZI[BIN_DIR]/zi.zsh
-autoload -Uz _zi
-(( ${+_comps} )) && _comps[zi]=_zi
-zicompinit
+ZINIT_HOME="$XDG_DATA_HOME/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "$ZINIT_HOME/zinit.zsh"
+autoload -Uz compinit
+compinit
 
 if [ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-zi depth"1" for \
+zinit depth"1" for \
     romkatv/powerlevel10k \
     jeffreytse/zsh-vi-mode \
-    z-shell/F-Sy-H \
-    z-shell/zsh-eza
+    zdharma-continuum/fast-syntax-highlighting
 
-zi wait lucid for \
-    z-shell/zsh-zoxide \
-    z-shell/H-S-MW \
+zinit wait lucid for \
+    zdharma-continuum/history-search-multi-word \
     hlissner/zsh-autopair \
     zsh-users/zsh-completions \
     zsh-users/zsh-autosuggestions \
@@ -73,12 +64,7 @@ ZVM_VISUAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_VISUAL_LINE_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 
-fast-theme -q CONFIG:catppuccin-mocha
-
-eza_params=("--all" "--icons")
-
-_ZO_CMD_PREFIX="cd"
-_ZO_FZF_OPTS="--ansi"
+fast-theme -q XDG:catppuccin-mocha
 
 bindkey "^G" autosuggest-accept
 
