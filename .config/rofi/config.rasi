@@ -1,9 +1,0 @@
-configuration {
-    font: "Ubuntu Nerd Font 10";
-    fixed-num-lines: true;
-    show-icons: true;
-    terminal: "alacritty";
-    icon-theme: "Papirus-Dark";
-    case-sensitive: true;
-}
-@theme "catppuccin-mocha.rasi"
