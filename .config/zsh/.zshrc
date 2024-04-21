@@ -54,7 +54,7 @@ zinit wait lucid for \
 
 [ ! -d $HOME/.fzf ] &&
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
-    $HOME/.fzf/install --all
+    $HOME/.fzf/install --all --no-bash --xdg
 
 [ ! -f ~/.config/zsh/.p10k.zsh ] || source ~/.config/zsh/.p10k.zsh
 
