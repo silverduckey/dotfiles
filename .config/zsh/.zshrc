@@ -29,6 +29,9 @@ alias wf=". fzf_find_files"
 alias wg=". fzf_live_grep"
 alias gf=". fzf_git_files"
 
+eval "$(zoxide init zsh --cmd cd)"
+fastfetch
+
 ZINIT_HOME="$XDG_DATA_HOME/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
@@ -72,5 +75,3 @@ bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
 bindkey -M vicmd "j" history-substring-search-down
-
-eval "$(zoxide init zsh --cmd cd)"
