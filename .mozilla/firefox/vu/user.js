@@ -112,8 +112,7 @@ user_pref("browser.xul.error_pages.expert_bad_cert", true);
 
 user_pref("network.http.referer.XOriginTrimmingPolicy", 1);
 
-user_pref("privacy.userContext.enabled", false);
-user_pref("privacy.userContext.ui.enabled", false);
+user_pref("privacy.userContext.newTabContainerOnLeftClick.enabled", false);
 
 user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
 user_pref("media.peerconnection.ice.default_address_only", true);
