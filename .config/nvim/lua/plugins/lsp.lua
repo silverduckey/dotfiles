@@ -28,6 +28,16 @@ return {
             }
 
             local lspconfig = require("lspconfig")
+            local servers = {
+                "lua_ls",
+                "clangd",
+                "rust_analyzer",
+                "gopls",
+                "tsserver",
+                "eslint",
+                "bashls",
+                "vimls",
+            }
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local on_attach = function()
                 keymap.set("n", "gD", lsp.buf.declaration, { desc = "Go to declaration" })
@@ -52,46 +62,13 @@ return {
             keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
             keymap.set("n", "<space>q", vim.diagnostic.setloclist, { desc = "Quickfix" })
 
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig.clangd.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig.rust_analyzer.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig.gopls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig.tsserver.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig.eslint.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig.bashls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-
-            lspconfig.vimls.setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
-        end
+            for _, lsp in ipairs(servers) do
+                lspconfig[lsp].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                })
+            end
+        end,
     },
 
     {

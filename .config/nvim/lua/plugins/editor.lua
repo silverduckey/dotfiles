@@ -2,10 +2,8 @@ return {
     {
         "nvim-orgmode/orgmode",
         dependencies = {
-            {
-                "akinsho/org-bullets.nvim",
-                "dhruvasagar/vim-table-mode",
-            },
+            "akinsho/org-bullets.nvim",
+            "dhruvasagar/vim-table-mode",
         },
         event = "VeryLazy",
         config = function()
@@ -44,10 +42,12 @@ return {
                     "yaml",
                     "ini",
                 },
+                ignore_install = {
+                    "org",
+                },
                 auto_install = true,
                 highlight = {
                     enable = true,
-                    additional_vim_regex_highlighting = { "org" },
                 },
             })
 
