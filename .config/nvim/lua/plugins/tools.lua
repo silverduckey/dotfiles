@@ -64,21 +64,26 @@ return {
 
     {
         "ThePrimeagen/harpoon",
+        branch = "harpoon2",
         event = "VeryLazy",
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
         config = function()
-            local mark = require("harpoon.mark")
-            local ui = require("harpoon.ui")
+            local harpoon = require("harpoon")
 
-            keymap.set("n", "<leader>mt", mark.toggle_file, { desc = "Toggle harpoon mark" })
-            keymap.set("n", "<leader>mm", ui.toggle_quick_menu)
+            harpoon.setup()
 
-            keymap.set("n", "<leader>mh", function() ui.nav_file(1) end, { desc = "Go to the 1st file in harpoon list" })
-            keymap.set("n", "<leader>mj", function() ui.nav_file(2) end, { desc = "Go to the 2nd file in harpoon list" })
-            keymap.set("n", "<leader>mk", function() ui.nav_file(3) end, { desc = "Go to the 3rd file in harpoon list" })
-            keymap.set("n", "<leader>ml", function() ui.nav_file(4) end, { desc = "Go to the 4th file in harpoon list" })
+            keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+            keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+            keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
+            keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
+            keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
+            keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
+
+            keymap.set("n", "<C-n>", function() harpoon:list():next() end)
+            keymap.set("n", "<C-p>", function() harpoon:list():prev() end)
         end,
     },
 

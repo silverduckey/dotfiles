@@ -69,7 +69,7 @@ ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_BLINKING_UNDERLINE
 
 fast-theme -q XDG:catppuccin-mocha
 
-bindkey "^G" autosuggest-accept
+bindkey "^A" autosuggest-accept
 
 bindkey "^[[A" history-substring-search-up
 bindkey "^[[B" history-substring-search-down
