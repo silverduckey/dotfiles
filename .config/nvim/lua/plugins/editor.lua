@@ -181,7 +181,7 @@ return {
         "Exafunction/codeium.vim",
         event = "VimEnter",
         config = function()
-            keymap.set("i", "<C-a>", function() return fn["codeium#Accept"]() end, { expr = true })
+            keymap.set("i", "<C-j>", function() return fn["codeium#Accept"]() end, { expr = true })
         end,
     },
 
