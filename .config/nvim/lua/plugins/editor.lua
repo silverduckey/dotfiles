@@ -95,7 +95,6 @@ return {
                 "windwp/nvim-autopairs",
                 config = function()
                     require("nvim-autopairs").setup({
-                        disable_in_visualblock = true,
                         disable_in_replace_mode = false,
                     })
                 end,
