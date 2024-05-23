@@ -8,7 +8,7 @@ zstyle ":completion:*" select-prompt %SScrolling active: current selection at %p
 HISTFILE=$XDG_DATA_HOME/zsh/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
-setopt extendedglob histignorealldups histfindnodups sharehistory notify
+setopt extendedglob globdots histignorealldups histfindnodups sharehistory notify
 unsetopt beep
 bindkey -v
 
@@ -41,8 +41,9 @@ zinit depth"1" for \
     jeffreytse/zsh-vi-mode \
     zdharma-continuum/fast-syntax-highlighting
 
-zinit wait lucid for \
+zinit wait lucid depth"1" for \
     zdharma-continuum/history-search-multi-word \
+    Aloxaf/fzf-tab \
     hlissner/zsh-autopair \
     zsh-users/zsh-completions \
     zsh-users/zsh-autosuggestions \
