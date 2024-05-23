@@ -1,14 +1,14 @@
 zstyle ":completion:*" completer _expand _complete _ignored _correct _approximate
 zstyle ":completion:*" list-colors ""
 zstyle ":completion:*" list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ":completion:*" matcher-list "r:|[._-]=** r:|=**" "l:|=* r:|=*"
+zstyle ":completion:*" matcher-list "m:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=** r:|=**"
 zstyle ":completion:*" menu select=0
 zstyle ":completion:*" select-prompt %SScrolling active: current selection at %p%s
 
 HISTFILE=$XDG_DATA_HOME/zsh/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
-setopt extendedglob notify
+setopt extendedglob histignorealldups histfindnodups sharehistory notify
 unsetopt beep
 bindkey -v
 
