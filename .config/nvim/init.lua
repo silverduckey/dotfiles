@@ -1,3 +1,3 @@
-require("vu.opt")
-require("vu.keymap")
-require("vu.lazy")
+require("vudangxyz.opt")
+require("vudangxyz.keymap")
+require("vudangxyz.lazy")
