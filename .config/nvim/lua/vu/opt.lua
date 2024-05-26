@@ -13,7 +13,7 @@ o.timeout          = true
 o.timeoutlen       = 300
 
 opt.guicursor      =
-"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait500-blinkoff500-blinkon500-Cursor/lCursor,sm:block-blinkwait500-blinkoff500-blinkon500"
+"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait800-blinkoff800-blinkon800-Cursor/lCursor,sm:block-blinkwait800-blinkoff800-blinkon800"
 
 opt.nu             = true
 opt.relativenumber = true
