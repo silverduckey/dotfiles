@@ -62,10 +62,7 @@ return {
                         "diagnostics",
                     },
                     lualine_c = {
-                        {
-                            "filename",
-                            path = 3,
-                        },
+                        "filename",
                         "lsp_progress",
                     },
                 },
