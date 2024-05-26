@@ -44,10 +44,6 @@ return {
                 end
             end
 
-            local function codeium()
-                return "{…}" .. fn["codeium#GetStatusString"]()
-            end
-
             require("lualine").setup({
                 options = {
                     component_separators = { left = "|", right = "|" },
@@ -72,14 +68,6 @@ return {
                         },
                         "lsp_progress",
                     },
-                    lualine_x = {
-                        {
-                            codeium,
-                        },
-                        "encoding",
-                        "fileformat",
-                        "filetype",
-                    }
                 },
                 extensions = { "lazy", "nvim-dap-ui" },
             })
