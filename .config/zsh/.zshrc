@@ -40,13 +40,13 @@ compinit
 zinit depth"1" for \
     romkatv/powerlevel10k \
     jeffreytse/zsh-vi-mode \
+    zsh-users/zsh-autosuggestions \
     zdharma-continuum/fast-syntax-highlighting
 
 zinit wait lucid depth"1" for \
     zdharma-continuum/history-search-multi-word \
     hlissner/zsh-autopair \
     zsh-users/zsh-completions \
-    zsh-users/zsh-autosuggestions \
     zsh-users/zsh-history-substring-search
 
 [ ! -d $HOME/.fzf ] &&
