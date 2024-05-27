@@ -42,7 +42,6 @@ return {
             local on_attach = function()
                 keymap.set("n", "gD", lsp.buf.declaration, { desc = "Go to declaration" })
                 keymap.set("n", "gd", lsp.buf.definition, { desc = "Go to definition" })
-                keymap.set("n", "K", lsp.buf.hover, { desc = "Hover" })
                 keymap.set("n", "gi", lsp.buf.implementation, { desc = "Go to implementation" })
                 keymap.set("i", "<C-k>", lsp.buf.signature_help, { desc = "Signature help" })
                 keymap.set("n", "<space>wa", lsp.buf.add_workspace_folder, { desc = "Add workspace folder" })
@@ -57,9 +56,6 @@ return {
                 keymap.set("n", "<space>f", lsp.buf.format, { desc = "Format" })
             end
 
-            keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Diagnostic" })
-            keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
-            keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
             keymap.set("n", "<space>q", vim.diagnostic.setloclist, { desc = "Quickfix" })
 
             for _, lsp in ipairs(servers) do
