@@ -79,7 +79,7 @@ return {
                     "nvim-neotest/nvim-nio",
                 },
             },
-            "folke/neodev.nvim",
+            "folke/lazydev.nvim",
         },
         config = function()
             local dap = require("dap")
@@ -111,8 +111,10 @@ return {
             dap.listeners.before.event_terminated["dapui_config"] = dapui.close
             dap.listeners.before.event_exited["dapui_config"] = dapui.close
 
-            require("neodev").setup({
-                library = { plugins = { "nvim-dap-ui" }, types = true },
+            require("lazydev").setup({
+                library = {
+                    "nvim-dap-ui",
+                },
             })
         end
     },
