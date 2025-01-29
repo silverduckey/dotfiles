@@ -33,7 +33,7 @@ return {
                 "clangd",
                 "rust_analyzer",
                 "gopls",
-                "tsserver",
+                "ts_ls",
                 "eslint",
                 "bashls",
                 "vimls",

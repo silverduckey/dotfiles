@@ -76,7 +76,7 @@ return {
         event = "VeryLazy",
         config = function()
             require("which-key").setup({
-                key_labels = {
+                replace = {
                     ["<Space>"] = "SPC",
                     ["<CR>"] = "RET",
                     ["<Tab>"] = "TAB",
