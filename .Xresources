@@ -7,10 +7,8 @@ Xft.hintstyle: hintfull
 Xft.lcdfilter: lcdfilter
 
 XTerm*renderFont: true
-XTerm*faceName: xft:FiraCode Nerd Font Mono:size=11, \
-                xft:Noto Color Emoji:size=11, \
-XTerm*faceSize: 11
-XTerm*utf8: 11
+XTerm*faceName: xft:FiraCode Nerd Font Mono:pixelsize=12, \
+                xft:Noto Color Emoji:pixelsize=12, \
 XTerm*locale: true
 
 XTerm*loginshell: true
