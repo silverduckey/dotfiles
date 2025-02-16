@@ -1,4 +1,0 @@
-#!/bin/sh
-
-volstat="$(pw-volume status)"
-notify-send "Volume status" "$volstat"
