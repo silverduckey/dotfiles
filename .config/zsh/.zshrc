@@ -55,7 +55,7 @@ zinit wait lucid depth"1" for \
     $HOME/.fzf/install --all --no-bash --xdg
 
 eval "$(zoxide init zsh --cmd cd)"
-fastfetch
+fortune | cowsay
 
 if [ -r "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh" ]; then
     source "$XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh"
