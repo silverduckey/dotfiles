@@ -5,10 +5,10 @@ zstyle ":completion:*" matcher-list "m:{[:lower:][:upper:]}={[:upper:][:lower:]}
 zstyle ":completion:*" menu select=0
 zstyle ":completion:*" select-prompt %SScrolling active: current selection at %p%s
 
-HISTFILE=$XDG_DATA_HOME/zsh/.histfile
+HISTFILE=$HOME/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
-setopt extendedglob globdots histignorealldups histfindnodups sharehistory notify
+setopt extendedglob globdots histignorealldups histfindnodups appendhistory sharehistory notify
 unsetopt beep
 bindkey -v
 
