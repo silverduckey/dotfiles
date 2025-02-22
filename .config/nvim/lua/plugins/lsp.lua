@@ -35,6 +35,7 @@ return {
                 "gopls",
                 "ts_ls",
                 "eslint",
+                "harper_ls",
                 "bashls",
                 "vimls",
             }
