@@ -45,21 +45,27 @@ return {
         "mbbill/undotree",
         keys = {
             { "<leader>u", "<CMD>UndotreeToggle<CR>", desc = "Toggle Undotree" },
-        }
+        },
     },
 
     {
-        "vifm/vifm.vim",
+        "mikavilpas/yazi.nvim",
+        event = "VeryLazy",
+        keys = {
+            { "<leader>.", "<CMD>Yazi<CR>", desc = "Launch Yazi" }
+        },
         config = function()
-            keymap.set("n", "<leader>.", "<CMD>Vifm<CR>", { desc = "Launch Vifm" })
-        end,
+            require("yazi").setup({
+                open_for_directories = true,
+            })
+        end
     },
 
     {
         "kdheepak/lazygit.nvim",
         keys = {
             { "<leader>gs", "<CMD>LazyGit<CR>", desc = "Launch LazyGit" },
-        }
+        },
     },
 
     {

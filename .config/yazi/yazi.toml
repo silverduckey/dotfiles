@@ -1,0 +1,16 @@
+[manager]
+ratio          = [ 1, 2, 3 ]
+sort_sensitive = true
+show_hidden    = true
+scrolloff      = 8
+
+[preview]
+tab_size        = 4
+
+[plugin]
+prepend_previewers = [
+	{ name = "*/", run = "eza-preview" },
+]
+
+[input]
+cursor_blink = true
