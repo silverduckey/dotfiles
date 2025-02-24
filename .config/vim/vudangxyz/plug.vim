@@ -7,7 +7,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), "!isdirectory(v:val.dir)"))
             \| endif
 call plug#begin()
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-Plug 'vifm/vifm.vim'
+Plug 'chriszarate/yazi.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
 Plug 'nanotee/zoxide.vim'
@@ -19,7 +19,7 @@ call plug#end()
 
 colorscheme catppuccin_mocha
 
-nnoremap <leader>. :Vifm<CR>
+nnoremap <leader>. :Yazi<CR>
 
 nnoremap <leader>wf :Files<CR>
 nnoremap <leader>gf :GitFiles<CR>
