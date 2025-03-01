@@ -4,7 +4,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 export EDITOR="nvim"
-export VISUAL="nvim"
+export VISUAL="neovide"
 export TERM="xterm-256color"
 export PAGER="less"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
