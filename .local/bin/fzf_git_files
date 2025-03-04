@@ -1,6 +1,0 @@
-#!/bin/sh
-
-res="$(git ls-files | fzf)"
-if [ -f "$res" ]; then
-	nvim "$res"
-fi

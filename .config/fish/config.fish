@@ -31,9 +31,6 @@ alias mv "mv -i"
 alias rm "rm -ri"
 alias gs "lazygit"
 alias archwiki "archwiki-offline -m fzf -o w3m"
-alias wf ". fzf_find_files"
-alias wg ". fzf_live_grep"
-alias gf ". fzf_git_files"
 
 fish_vi_key_bindings
 
