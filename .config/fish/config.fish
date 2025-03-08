@@ -52,5 +52,10 @@ set fzf_preview_file_cmd bat -p
 fish_config theme choose "Catppuccin Mocha"
 
 if status is-interactive
+    function starship_transient_prompt_func
+        starship module character
+    end
+    starship init fish | source
+    enable_transience
     fortune | cowsay -rC
 end
