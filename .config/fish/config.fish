@@ -33,14 +33,20 @@ alias archwiki "archwiki-offline -m fzf -o w3m"
 
 fish_vi_key_bindings
 
-if not functions -q fisher
-    curl -sL https://git.io/fisher | source
-    fisher update
-end
+if status is-interactive
+    if not functions -q fisher
+        curl -sL https://git.io/fisher | source
+        fisher update
+    end
 
-[ ! -d $HOME/.fzf ] &&
-git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf &&
-$HOME/.fzf/install --all --xdg --no-bash --no-zsh
+    function starship_transient_prompt_func
+        starship module character
+    end
+    fzf --fish | source
+    starship init fish | source
+    enable_transience
+    fortune | cowsay -rC
+end
 
 set --universal zoxide_cmd cd
 
@@ -50,12 +56,3 @@ set fzf_preview_dir_cmd eza -alh --color=always --icons
 set fzf_preview_file_cmd bat -p
 
 fish_config theme choose "Catppuccin Mocha"
-
-if status is-interactive
-    function starship_transient_prompt_func
-        starship module character
-    end
-    starship init fish | source
-    enable_transience
-    fortune | cowsay -rC
-end
