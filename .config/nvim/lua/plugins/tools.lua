@@ -80,7 +80,7 @@ return {
 
             harpoon.setup()
 
-            keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+            keymap.set("n", "<C-S-a>", function() harpoon:list():add() end)
             keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
             keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)

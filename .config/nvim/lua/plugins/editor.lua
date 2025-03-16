@@ -72,6 +72,58 @@ return {
     },
 
     {
+        "yetone/avante.nvim",
+        event = "VeryLazy",
+        build = "make",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "stevearc/dressing.nvim",
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "nvim-telescope/telescope.nvim",
+            "hrsh7th/nvim-cmp",
+            "nvim-tree/nvim-web-devicons",
+            {
+                "zbirenbaum/copilot.lua",
+                event = "VeryLazy",
+                config = function()
+                    require("copilot").setup()
+                end,
+            },
+            {
+                "HakonHarnes/img-clip.nvim",
+                event = "VeryLazy",
+                opts = {
+                    default = {
+                        embed_image_as_base64 = false,
+                        prompt_for_file_name = false,
+                        drag_and_drop = {
+                            insert_mode = true,
+                        },
+                    },
+                },
+            },
+            {
+                "MeanderingProgrammer/render-markdown.nvim",
+                ft = { "markdown", "Avante" },
+                config = function()
+                    require("render-markdown").setup({
+                        file_types = {
+                            "markdown",
+                            "Avante",
+                        },
+                    })
+                end,
+            },
+        },
+        config = function()
+            require("avante").setup({
+                provider = "copilot",
+            })
+        end,
+    },
+
+    {
         "hrsh7th/nvim-cmp",
         event = { "InsertEnter", "CmdlineEnter" },
         dependencies = {
@@ -98,17 +150,6 @@ return {
                         disable_in_replace_mode = false,
                     })
                 end,
-            },
-            {
-                "Exafunction/codeium.nvim",
-                dependencies = {
-                    "nvim-lua/plenary.nvim",
-                },
-                config = function()
-                    require("codeium").setup({
-                        enable_chat = true
-                    })
-                end
             },
         },
         config = function()
@@ -154,7 +195,6 @@ return {
                     { name = "nvim_lsp" },
                     { name = "nvim_lsp_signature_help" },
                     { name = "luasnip" },
-                    { name = "codeium" },
                     { name = "orgmode" },
                 }, {
                     { name = "buffer" },
