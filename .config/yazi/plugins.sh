@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ya pack -a llanosrocas/yaziline Lil-Dank/lazygit ahkohd/eza-preview
+ya pack -a Lil-Dank/lazygit ahkohd/eza-preview llanosrocas/yaziline yazi-rs/flavors:catppuccin-mocha

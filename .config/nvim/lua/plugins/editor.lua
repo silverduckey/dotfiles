@@ -110,7 +110,6 @@ return {
                     })
                 end
             },
-
         },
         config = function()
             local luasnip = require("luasnip")
