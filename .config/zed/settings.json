@@ -5,7 +5,7 @@
     "dark": "Catppuccin Mocha"
   },
   "icon_theme": "Catppuccin Mocha",
-  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_family": "Mononoki Nerd Font",
   "ui_font_family": "Ubuntu Nerd Font",
   "vim_mode": true
 }
