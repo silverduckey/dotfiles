@@ -1,19 +1,9 @@
-Xft.dpi: 96
-Xft.antialias: true
-Xft.hinting: true
-Xft.rgba: rgb
-Xft.autohint: true
-Xft.hintstyle: hintfull
-Xft.lcdfilter: lcdfilter
-
-XTerm*renderFont: true
-XTerm*faceName: xft:Mononoki Nerd Font:size=10, \
-                xft:Noto Color Emoji:size=10, \
-XTerm*locale: true
-
-XTerm*loginshell: true
-
-XTerm*savelines: 1000
+URxvt.font: xft:Mononoki Nerd Font:size=10:antialias=true:autohint=true, xft:Noto Color Emoji:size=10:antialias=true:autohint=true,
+URxvt.saveline: 2000
+URxvt.scrollBar: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
 
 *background: #1E1E2E
 *foreground: #CDD6F4
