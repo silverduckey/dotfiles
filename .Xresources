@@ -1,9 +1,11 @@
-URxvt.font: xft:Mononoki Nerd Font:size=10:antialias=true:autohint=true, xft:Noto Color Emoji:size=10:antialias=true:autohint=true,
-URxvt.saveline: 2000
+URxvt*imLocale: en_US.UTF-8
+URxvt*termName: rxvt-unicode-256color
+URxvt*buffered: false
+URxvt.intensityStyles: false
+URxvt.font: xft:Mononoki Nerd Font:size=10, \
+            xft:Noto Color Emoji:size=12, \
+URxvt.saveLines: 2000
 URxvt.scrollBar: false
-URxvt.urgentOnBell: true
-URxvt.depth: 24
-URxvt.iso14755: false
 
 *background: #1E1E2E
 *foreground: #CDD6F4

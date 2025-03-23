@@ -6,7 +6,6 @@ set XDG_CACHE_HOME "$HOME/.cache"
 set fish_greeting
 set EDITOR "nvim"
 set VISUAL "neovide"
-set TERM "xterm-256color"
 set PAGER "less"
 
 set -e fish_user_paths

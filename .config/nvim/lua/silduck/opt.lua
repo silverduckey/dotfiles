@@ -12,6 +12,8 @@ g.maplocalleader   = " "
 o.timeout          = true
 o.timeoutlen       = 300
 
+o.guifont = "Mononoki Nerd Font:h10"
+
 opt.guicursor      =
 "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait800-blinkoff800-blinkon800-Cursor/lCursor,sm:block-blinkwait800-blinkoff800-blinkon800"
 
