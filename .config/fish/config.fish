@@ -51,7 +51,4 @@ set --universal zoxide_cmd cd
 
 set -Ux EZA_STANDARD_OPTIONS --icons
 
-set fzf_preview_dir_cmd eza -alh --color=always --icons
-set fzf_preview_file_cmd bat -p
-
 fish_config theme choose "Catppuccin Mocha"
