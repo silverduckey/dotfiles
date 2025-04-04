@@ -1,0 +1,11 @@
+(sleep 5 && feh --bg-fill --randomize --recursive /usr/share/backgrounds/) &
+(sleep 5 && conky -U) &
+redshift -O 4800K &
+picom -b &
+lxsession &
+nm-applet &
+volctl &
+ibus start &
+flameshot &
+plank &
+stalonetray &
