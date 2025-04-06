@@ -7,6 +7,7 @@ set fish_greeting
 set EDITOR "nvim"
 set VISUAL "neovide"
 set PAGER "less"
+set ZELLIJ_AUTO_EXIT true
 
 set -e fish_user_paths
 set -U fish_user_paths $HOME/.bin  $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $fish_user_paths
@@ -44,6 +45,7 @@ if status is-interactive
     fzf --fish | source
     starship init fish | source
     enable_transience
+    eval (zellij setup --generate-auto-start fish | string collect)
     fortune | cowsay -rC
 end
 
