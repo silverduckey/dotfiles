@@ -1,45 +1,47 @@
-g                  = vim.g
-o                  = vim.o
-opt                = vim.opt
-api                = vim.api
-fn                 = vim.fn
-lsp                = vim.lsp
-keymap             = vim.keymap
+g                    = vim.g
+o                    = vim.o
+opt                  = vim.opt
+api                  = vim.api
+fn                   = vim.fn
+lsp                  = vim.lsp
+keymap               = vim.keymap
 
-g.mapleader        = " "
-g.maplocalleader   = " "
+g.loaded_netrwPlugin = 0
 
-o.timeout          = true
-o.timeoutlen       = 300
+g.mapleader          = " "
+g.maplocalleader     = " "
 
-o.guifont = "Mononoki Nerd Font:h10"
+o.timeout            = true
+o.timeoutlen         = 300
 
-opt.guicursor      =
+o.guifont            = "Mononoki Nerd Font:h10"
+
+opt.guicursor        =
 "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait800-blinkoff800-blinkon800-Cursor/lCursor,sm:block-blinkwait800-blinkoff800-blinkon800"
 
-opt.nu             = true
-opt.relativenumber = true
+opt.nu               = true
+opt.relativenumber   = true
 
-opt.tabstop        = 4
-opt.softtabstop    = 4
-opt.shiftwidth     = 4
-opt.expandtab      = true
+opt.tabstop          = 4
+opt.softtabstop      = 4
+opt.shiftwidth       = 4
+opt.expandtab        = true
 
-opt.smartindent    = true
+opt.smartindent      = true
 
-opt.wrap           = false
+opt.wrap             = false
 
-opt.swapfile       = false
-opt.backup         = false
-opt.undofile       = true
+opt.swapfile         = false
+opt.backup           = false
+opt.undofile         = true
 
-opt.hlsearch       = false
-opt.incsearch      = true
+opt.hlsearch         = false
+opt.incsearch        = true
 
-opt.termguicolors  = true
+opt.termguicolors    = true
 
-opt.scrolloff      = 8
-opt.signcolumn     = "yes"
+opt.scrolloff        = 8
+opt.signcolumn       = "yes"
 opt.isfname:append("@-@")
 
 opt.updatetime = 50
