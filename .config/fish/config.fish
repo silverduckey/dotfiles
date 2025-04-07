@@ -19,11 +19,12 @@ set -Ux FZF_DEFAULT_OPTS "\
     --color=selected-bg:#45475a \
     --color=border:#313244,label:#cdd6f4"
 
-alias fd "fd -H"
-alias rg "rg --hidden"
 alias cat "bat"
-alias ps "procs"
+alias man "batman"
+alias rg "batgrep --hidden"
+alias fd "fd -H"
 alias top "btm"
+alias ps "procs"
 alias du "dust"
 alias cp "cp -ri"
 alias mv "mv -i"
@@ -45,6 +46,7 @@ if status is-interactive
     fzf --fish | source
     starship init fish | source
     enable_transience
+    eval (batpipe)
     eval (zellij setup --generate-auto-start fish | string collect)
     fortune | cowsay -rC
 end
