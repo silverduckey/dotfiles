@@ -179,7 +179,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>zen-browser</command>
+        <command>floorp</command>
       </action>
     </keybind>
   </keyboard>
