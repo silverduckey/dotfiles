@@ -64,8 +64,13 @@ return {
                     },
                     lualine_c = {
                         "filename",
-                        "lsp_progress",
+                        "lsp_status",
+                    },
+                    lualine_x = {
                         "copilot",
+                        "encoding",
+                        "fileformat",
+                        "filetype"
                     },
                 },
                 extensions = { "lazy", "nvim-dap-ui" },
