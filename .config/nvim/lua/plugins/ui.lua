@@ -30,7 +30,8 @@ return {
         event = "VimEnter",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
-            "arkav/lualine-lsp-progress"
+            "arkav/lualine-lsp-progress",
+            "AndreM222/copilot-lualine",
         },
         config = function()
             local function source()
@@ -64,6 +65,7 @@ return {
                     lualine_c = {
                         "filename",
                         "lsp_progress",
+                        "copilot",
                     },
                 },
                 extensions = { "lazy", "nvim-dap-ui" },
