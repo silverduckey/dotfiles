@@ -9,6 +9,8 @@
 .config/github-copilot
 .config/go
 .config/ibus
+.config/lazygit/state.yml
+.config/libfm
 .config/lxsession/dwm
 .config/mimeapps.list
 .config/nvim/lazy-lock.json

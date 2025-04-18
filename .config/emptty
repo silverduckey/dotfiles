@@ -1,5 +1,0 @@
-#!/bin/sh
-
-Selection=true
-xrdb -merge ~/.Xresources
-exec dbus-launch $@
