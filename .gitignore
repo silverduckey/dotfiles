@@ -6,11 +6,13 @@
 .config/fish/fish_variables
 .config/fish/functions
 .config/fish/themes
+.config/GIMP/3.0
 .config/github-copilot
 .config/go
 .config/ibus
 .config/lazygit/state.yml
 .config/libfm
+.config/libreoffice
 .config/lxsession/dwm
 .config/mimeapps.list
 .config/nvim/lazy-lock.json
