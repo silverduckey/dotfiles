@@ -30,7 +30,7 @@
 }
 
 configuration {
-    font: "Ubuntu Nerd Font 10";
+    font: "Ubuntu Nerd Font 8";
     show-icons: true;
     terminal: "ghostty";
     icon-theme: "Papirus-Dark";

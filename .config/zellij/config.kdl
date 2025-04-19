@@ -218,7 +218,7 @@ keybinds clear-defaults=true {
 
 simplified_ui true
 theme "catppuccin-mocha"
-default_layout "welcome"
 default_mode "locked"
+default_layout "welcome"
 copy_command "xclip -selection clipboard"
 show_startup_tips false
