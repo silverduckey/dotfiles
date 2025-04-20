@@ -7,7 +7,7 @@ Xft.hintstyle: hintfull
 Xft.lcdfilter: lcdfilter
 
 UXTerm*renderFont: true
-UXTerm*faceName: xft:Mononoki Nerd Font:size=12:antialias=true:autohint=true, \
+UXTerm*faceName: xft:IosevkaTermSlab Nerd Font:size=12:antialias=true:autohint=true, \
                  xft:Noto Color Emoji:size=12:antialias=true:autohint=true, \
 UXTerm*locale: true
 

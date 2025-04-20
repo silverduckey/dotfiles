@@ -6,6 +6,8 @@
 .config/fish/fish_variables
 .config/fish/functions
 .config/fish/themes
+.config/font-manager
+.config/fontconfig/conf.d
 .config/GIMP/3.0
 .config/github-copilot
 .config/go
