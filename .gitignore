@@ -1,5 +1,6 @@
-.config/autostart
 .config/.config
+.config/GIMP/3.0
+.config/autostart
 .config/dconf
 .config/fish/completions
 .config/fish/conf.d
@@ -8,7 +9,6 @@
 .config/fish/themes
 .config/font-manager
 .config/fontconfig/conf.d
-.config/GIMP/3.0
 .config/github-copilot
 .config/go
 .config/ibus
@@ -19,6 +19,7 @@
 .config/mimeapps.list
 .config/nvim/lazy-lock.json
 .config/pulse
+.config/thorium
 .config/yazi/flavors
 .config/yazi/package.toml
 .config/yazi/plugins

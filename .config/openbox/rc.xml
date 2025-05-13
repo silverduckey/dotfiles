@@ -179,7 +179,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>floorp</command>
+        <command>thorium-browser</command>
       </action>
     </keybind>
   </keyboard>
