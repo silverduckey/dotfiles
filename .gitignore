@@ -1,5 +1,7 @@
-.config/autostart
 .config/.config
+.config/GIMP/3.0
+.config/autostart
+.config/chromium
 .config/dconf
 .config/fish/completions
 .config/fish/conf.d
@@ -8,7 +10,6 @@
 .config/fish/themes
 .config/font-manager
 .config/fontconfig/conf.d
-.config/GIMP/3.0
 .config/github-copilot
 .config/go
 .config/ibus
