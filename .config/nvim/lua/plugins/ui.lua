@@ -31,7 +31,6 @@ return {
         dependencies = {
             "nvim-tree/nvim-web-devicons",
             "arkav/lualine-lsp-progress",
-            "AndreM222/copilot-lualine",
         },
         config = function()
             local function source()
@@ -67,7 +66,6 @@ return {
                         "lsp_status",
                     },
                     lualine_x = {
-                        "copilot",
                         "encoding",
                         "fileformat",
                         "filetype"

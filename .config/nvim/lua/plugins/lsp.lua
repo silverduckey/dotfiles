@@ -19,52 +19,28 @@ return {
         "williamboman/mason-lspconfig.nvim",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            "williamboman/mason.nvim",
+            "mason-org/mason.nvim",
             "neovim/nvim-lspconfig",
         },
         config = function()
-            require("mason-lspconfig").setup {
-                automatic_installation = true,
-            }
+            require("mason-lspconfig").setup()
 
-            local lspconfig = require("lspconfig")
-            local servers = {
-                "lua_ls",
-                "clangd",
-                "rust_analyzer",
-                "gopls",
-                "ts_ls",
-                "eslint",
-                "harper_ls",
-                "bashls",
-                "vimls",
-            }
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
-            local on_attach = function()
-                keymap.set("n", "gD", lsp.buf.declaration, { desc = "Go to declaration" })
-                keymap.set("n", "gd", lsp.buf.definition, { desc = "Go to definition" })
-                keymap.set("n", "gi", lsp.buf.implementation, { desc = "Go to implementation" })
-                keymap.set("i", "<C-k>", lsp.buf.signature_help, { desc = "Signature help" })
-                keymap.set("n", "<space>wa", lsp.buf.add_workspace_folder, { desc = "Add workspace folder" })
-                keymap.set("n", "<space>wr", lsp.buf.remove_workspace_folder, { desc = "Remove workspace folder" })
-                keymap.set("n", "<space>wl", function()
-                    print(vim.inspect(lsp.buf.list_workspace_folders()))
-                end, { desc = "List workspace folders" })
-                keymap.set("n", "<space>D", lsp.buf.type_definition, { desc = "Type definition" })
-                keymap.set("n", "<space>rn", lsp.buf.rename, { desc = "Rename" })
-                keymap.set({ "n", "v" }, "<space>ca", lsp.buf.code_action, { desc = "Code action" })
-                keymap.set("n", "gr", lsp.buf.references, { desc = "References" })
-                keymap.set("n", "<space>f", lsp.buf.format, { desc = "Format" })
-            end
+            keymap.set("n", "gD", lsp.buf.declaration, { desc = "Go to declaration" })
+            keymap.set("n", "gd", lsp.buf.definition, { desc = "Go to definition" })
+            keymap.set("n", "gi", lsp.buf.implementation, { desc = "Go to implementation" })
+            keymap.set("i", "<C-k>", lsp.buf.signature_help, { desc = "Signature help" })
+            keymap.set("n", "<space>wa", lsp.buf.add_workspace_folder, { desc = "Add workspace folder" })
+            keymap.set("n", "<space>wr", lsp.buf.remove_workspace_folder, { desc = "Remove workspace folder" })
+            keymap.set("n", "<space>wl", function()
+                print(vim.inspect(lsp.buf.list_workspace_folders()))
+            end, { desc = "List workspace folders" })
+            keymap.set("n", "<space>D", lsp.buf.type_definition, { desc = "Type definition" })
+            keymap.set("n", "<space>rn", lsp.buf.rename, { desc = "Rename" })
+            keymap.set({ "n", "v" }, "<space>ca", lsp.buf.code_action, { desc = "Code action" })
+            keymap.set("n", "gr", lsp.buf.references, { desc = "References" })
+            keymap.set("n", "<space>f", lsp.buf.format, { desc = "Format" })
 
             keymap.set("n", "<space>q", vim.diagnostic.setloclist, { desc = "Quickfix" })
-
-            for _, lsp in ipairs(servers) do
-                lspconfig[lsp].setup({
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                })
-            end
         end,
     },
 
@@ -87,11 +63,6 @@ return {
             local dapui = require("dapui")
 
             require("mason-nvim-dap").setup({
-                ensure_installed = {
-                    "codelldb",
-                    "delve",
-                    "bash",
-                },
                 handlers = {},
             })
 
@@ -129,11 +100,6 @@ return {
         },
         config = function()
             require("mason-null-ls").setup({
-                ensure_installed = {
-                    "shfmt",
-                    "revive",
-                    "shellcheck",
-                },
                 handlers = {},
             })
         end,

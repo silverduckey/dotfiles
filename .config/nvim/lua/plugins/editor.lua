@@ -24,24 +24,7 @@ return {
             "nvim-treesitter/nvim-treesitter-context",
         },
         config = function()
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = {
-                    "lua",
-                    "c",
-                    "cpp",
-                    "go",
-                    "rust",
-                    "vim",
-                    "vimdoc",
-                    "query",
-                    "bash",
-                    "markdown",
-                    "markdown_inline",
-                    "regex",
-                    "toml",
-                    "yaml",
-                    "ini",
-                },
+            require("nvim-treesitter").setup({
                 ignore_install = {
                     "org",
                 },
@@ -68,60 +51,6 @@ return {
             api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
             api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
             api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
-        end,
-    },
-
-    {
-        "yetone/avante.nvim",
-        event = { "BufReadPre", "BufNewFile" },
-        build = "make",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-            "stevearc/dressing.nvim",
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            "nvim-telescope/telescope.nvim",
-            "hrsh7th/nvim-cmp",
-            "nvim-tree/nvim-web-devicons",
-            {
-                "zbirenbaum/copilot.lua",
-                event = "VeryLazy",
-                config = function()
-                    require("copilot").setup()
-                end,
-            },
-            {
-                "HakonHarnes/img-clip.nvim",
-                event = "VeryLazy",
-                config = function()
-                    require("img-clip").setup({
-                        default = {
-                            embed_image_as_base64 = false,
-                            prompt_for_file_name = false,
-                            drag_and_drop = {
-                                insert_mode = true,
-                            },
-                        },
-                    })
-                end
-            },
-            {
-                "MeanderingProgrammer/render-markdown.nvim",
-                ft = { "markdown", "Avante" },
-                config = function()
-                    require("render-markdown").setup({
-                        file_types = {
-                            "markdown",
-                            "Avante",
-                        },
-                    })
-                end,
-            },
-        },
-        config = function()
-            require("avante").setup({
-                provider = "copilot",
-            })
         end,
     },
 
