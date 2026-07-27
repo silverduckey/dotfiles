@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ya pkg add yazi-rs/plugins:full-border yazi-rs/plugins:jump-to-char Lil-Dank/lazygit ahkohd/eza-preview imsi32/yatline Mintass/rose-pine-moon VigneshR387/yatline-rosepine
+ya pkg add Jormala/relative-motions Lil-Dank/lazygit ahkohd/eza-preview yazi-rs/plugins:full-border imsi32/yatline Mintass/rose-pine-moon VigneshR387/yatline-rosepine

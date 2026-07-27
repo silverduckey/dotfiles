@@ -4,6 +4,10 @@ dark = "rose-pine-moon"
 [indicator]
 padding = { open = "█", close = "█" }
 
+[status]
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
 [icon]
 files = [
   { name = ".babelrc", text = "", fg = "#f6c177" },

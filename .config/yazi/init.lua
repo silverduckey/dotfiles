@@ -1,6 +1,14 @@
-require("full-border").setup()
+require("relative-motions"):setup({
+    show_numbers = "relative_absolute",
+    show_motion = true,
+    enter_mode = "first",
+})
 
-require("eza-preview").setup()
+require("eza-preview"):setup({
+    git_status = true,
+})
+
+require("full-border"):setup()
 
 require("yatline"):setup({
     theme = require("yatline-rosepine").setup("moon"),
