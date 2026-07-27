@@ -1,5 +1,5 @@
 [mgr]
-ratio = [1, 3, 4]
+ratio = [1, 2, 5]
 sort_sensitive = true
 show_hidden = true
 scrolloff = 8
