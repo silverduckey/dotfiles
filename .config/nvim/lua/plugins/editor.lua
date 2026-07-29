@@ -1,11 +1,11 @@
 return {
     {
         "nvim-orgmode/orgmode",
+        event = "VeryLazy",
         dependencies = {
             "akinsho/org-bullets.nvim",
             "dhruvasagar/vim-table-mode",
         },
-        event = "VeryLazy",
         config = function()
             require("orgmode").setup({
                 org_agenda_files = "Agenda/**/*",
@@ -18,20 +18,19 @@ return {
 
     {
         "nvim-treesitter/nvim-treesitter",
+        lazy = false,
         build = ":TSUpdate",
-        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "nvim-treesitter/nvim-treesitter-context",
         },
         config = function()
-            require("nvim-treesitter").setup({
-                ignore_install = {
-                    "org",
-                },
-                auto_install = true,
-                highlight = {
-                    enable = true,
-                },
+            vim.api.nvim_create_autocmd("FileType", {
+                callback = function(args)
+                    if vim.list_contains(require("nvim-treesitter").get_available(), vim.treesitter.language.get_lang(args.match)) then
+                        vim.treesitter.start(args.buf)
+                        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                    end
+                end,
             })
 
             require("treesitter-context").setup({
@@ -226,25 +225,7 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         main = "ibl",
         config = function()
-            require("ibl").setup({
-                indent = {
-                    char = "",
-                },
-                scope = {
-                    char = "",
-                },
-            })
-        end,
-    },
-
-    {
-        "folke/twilight.nvim",
-        lazy = true,
-        config = function()
-            require("twilight").setup({
-                context = 20,
-                exclude = { "alpha" },
-            })
+            require("ibl").setup()
         end,
     },
 
@@ -254,7 +235,15 @@ return {
             { "<leader>z", "<CMD>ZenMode<CR>", desc = "Toggle Zen mode" },
         },
         dependencies = {
-            "folke/twilight.nvim",
+            {
+                "folke/twilight.nvim",
+                config = function()
+                    require("twilight").setup({
+                        context = 20,
+                        exclude = { "alpha" },
+                    })
+                end,
+            }
         },
         config = function()
             require("zen-mode").setup({
