@@ -8,7 +8,7 @@ set EDITOR nvim
 set PAGER less
 
 set -e fish_user_paths
-set -U fish_user_paths $HOME/.bin $HOME/.local/bin $HOME/go/bin $HOME/.cargo/bin $fish_user_paths
+set -U fish_user_paths $HOME/.bin $HOME/.local/bin $HOME/go/bin $fish_user_paths
 
 if status is-interactive
     set -Ux FZF_DEFAULT_OPTS "
