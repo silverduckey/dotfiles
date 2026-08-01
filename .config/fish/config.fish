@@ -48,9 +48,9 @@ if status is-interactive
     end
     fzf --fish | source
     eval (batpipe)
+    fortune | cowsay -rC
+
     set --universal zoxide_cmd cd
     set -Ux EZA_STANDARD_OPTIONS --icons
     fish_config theme choose "Rosé Pine Auto"
-
-    fortune | cowsay -rC
 end
