@@ -48,6 +48,11 @@ if status is-interactive
     end
     fzf --fish | source
     eval (batpipe)
+    if type -q tmux
+        if not test -n "$TMUX"
+            tmux attach-session -t default; or tmux new-session -s default
+        end
+    end
     fortune | cowsay -rC
 
     set --universal zoxide_cmd cd
