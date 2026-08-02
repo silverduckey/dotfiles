@@ -50,7 +50,7 @@ if status is-interactive
     eval (batpipe)
     if type -q tmux
         if not test -n "$TMUX"
-            tmux-sessionizer
+            tmux
         end
     end
     fortune | cowsay -rC
