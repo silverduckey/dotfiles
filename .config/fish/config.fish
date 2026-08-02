@@ -50,12 +50,12 @@ if status is-interactive
     eval (batpipe)
     if type -q tmux
         if not test -n "$TMUX"
-            tmux attach-session -t default; or tmux new-session -s default
+            tmux-sessionizer
         end
     end
     fortune | cowsay -rC
 
     set --universal zoxide_cmd cd
     set -Ux EZA_STANDARD_OPTIONS --icons
-    fish_config theme choose "Rosé Pine Auto"
+    fish_config theme choose "Rosé Pine Moon"
 end
